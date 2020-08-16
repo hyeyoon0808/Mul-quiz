@@ -8,8 +8,11 @@ class Quizdetail extends Component {
     
     render() {
         const {onModify} = this.props;
+        const marginRemove={
+            margin:"0",
+        }
         return (
-            <Grid columns='three' divided>
+            <Grid columns='three' divided style={marginRemove}>
                 <Grid.Row>
                     <Grid.Column>
                         < DetailtextContainer/>
