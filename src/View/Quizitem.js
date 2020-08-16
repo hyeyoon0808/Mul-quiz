@@ -16,9 +16,12 @@ class Quizitem extends Component {
                         {/* <Item.Meta>Description</Item.Meta> */}
                         <Item.Description>
                     {/* <Image src='/images/wireframe/short-paragraph.png' /> */}
-                        <p>{quiz.price}</p>
+                        <p>{quiz.select1}</p>
+                        <p>{quiz.select2}</p>
+                        <p>{quiz.select3}</p>
+                        <p>{quiz.select4}</p>
                         </Item.Description>
-                    <Item.Extra>Additional Details</Item.Extra>
+                    <Item.Extra>add extra</Item.Extra>
                     
                     <button onClick={() => onRemove()}>제거</button>
                 </Item.Content>

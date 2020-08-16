@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid, Button } from 'semantic-ui-react'
 import DetailinputContainer from '../Container/DetailinputContainer';
 import DetailtextContainer from '../Container/DetailtextContainer';
 import DetailanswerContainer from '../Container/DetailanswerContainer';
 
 class Quizdetail extends Component {
+    
     render() {
-        const { quiz } = this.props;
+        const {onModify} = this.props;
         return (
             <Grid columns='three' divided>
                 <Grid.Row>
                     <Grid.Column>
-                        < DetailtextContainer />
+                        < DetailtextContainer/>
                     </Grid.Column>
                 </Grid.Row>
 
@@ -27,7 +28,9 @@ class Quizdetail extends Component {
                     </Grid.Column>
                 </Grid.Row>
 
-
+                <Button primary onClick={onModify}>
+                수정하기
+                </Button>
             </Grid>
         );
     }

@@ -13,7 +13,7 @@ class App extends Component {
         <Grid.Column width={3}>
           <QuizlistContainer />
         </Grid.Column>
-        <Grid.Column width={9}>
+        <Grid.Column>
           <QuizdetailContainer />
         </Grid.Column>
         

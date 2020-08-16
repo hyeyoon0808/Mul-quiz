@@ -17,8 +17,10 @@ class QuizlistContainer extends Component {
     }
 
     onAddQuiz = () =>{
-        let quiz = this.props.QuizStore.getselectquiz;
-        quiz = {...quiz};
+        alert('answer / true or false');
+        let quiz = {
+        ISBN: '9781617293986',
+        };
         this.props.QuizStore.addQuiz(quiz);
     }
 
