@@ -21,14 +21,14 @@ class App extends Component {
       margin:"0px"
     }
     return (
-      <Wrap style={tempStyle} >
+      <Wrap style={tempStyle} className={"navStyle"} >
         <Nav/>
         <Grid columns={2} divided  style={marginRemove} >
           <Grid.Row  style={tempStyle} >
             <Grid.Column width={3} style={tempStyle} >
               <QuizlistContainer />
             </Grid.Column>
-            <Grid.Column width={13} className={"test"}>
+            <Grid.Column width={13}>
               <QuizdetailContainer />
             </Grid.Column>
           </Grid.Row>
