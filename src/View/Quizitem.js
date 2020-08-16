@@ -2,18 +2,27 @@ import React, { Component } from 'react';
 import { Item } from "semantic-ui-react"
 import styled from 'styled-components';
 import classNames from 'classnames';
+import {MdDelete } from 'react-icons/md';
 
 const ListItems = styled.div`
     .ListItem{
         width:100%;
-        height:120px;
+        height:150px;
         padding:10px;
     }
     .checked{
-        box-shadow:5px 0px 10px #000;
-        background:black;
+        box-shadow:0px 0px 10px #afafaf;
+        background:rgb(234, 244, 252);
     }
     &:hover{background:#f2f2f2;}
+    svg{
+        font-size:20px;
+        cursor:pointer;
+        color:#58e2b6;
+        &:hover{
+            color:#ff7b7c;
+        }
+    }
     
 `
 
@@ -43,7 +52,7 @@ class Quizitem extends Component {
                                         <p>{quiz.price}</p>
                                     </Item.Description>
                                     <Item.Extra>Additional Details</Item.Extra>
-                                    <button onClick={() => onRemove()}>제거</button>
+                                    <MdDelete onClick={() => onRemove()}>제거</MdDelete>
 
                                 </Item.Content>
                             </Item>
@@ -67,7 +76,7 @@ class Quizitem extends Component {
                                         <p>{quiz.price}</p>
                                     </Item.Description>
                                     <Item.Extra>Additional Details</Item.Extra>
-                                    {hoverquiz === quiz ? <button onClick={() => onRemove()}>제거</button> : ""}
+                                    {hoverquiz === quiz ? <MdDelete onClick={() => onRemove()}>제거</MdDelete> : ""}
                                 </Item.Content>
                             </Item>
                         </Item.Group>

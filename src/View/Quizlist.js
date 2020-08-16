@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import Quizitem from "./Quizitem"
 import {ItemGroup} from "semantic-ui-react"
+import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 
 
 const MapList = styled.div`
+    box-shadow:0px 0px 4px #b3b3b3;
+    height:100%;
+    overflow: scroll;
+    .center{
+        display:block;
+        margin:0 auto;
+    }
 `
 
 class Quizlist extends Component {
@@ -33,7 +41,13 @@ class Quizlist extends Component {
         return (
             <MapList>
                 <ItemGroup>{quizlist}</ItemGroup>
-                <button onClick={() => onAddQuiz()}>추가</button>
+                <Button 
+                    variant="contained"
+                    color="primary" 
+                    disableElevation
+                    className={"center"}
+                    onClick={() => onAddQuiz()}
+                >Add question</Button>
             </MapList>
         );
     }

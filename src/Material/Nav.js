@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 const Nav = styled.div`
     .MuiToolbar-root{
-        height:5rem;
+        height:80px;
     }
 `
 

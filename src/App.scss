@@ -1,2 +1,15 @@
-.test{
+*{
+    margin:0;
+    padding:0;
 }
+html,body{
+    height:100%;
+}
+#root{height:100%;}
+.grid{margin-top:0;}
+.makeStyles-root-1{
+    z-index:1;
+    position:fixed;
+    width:100%;
+}
+.row{margin-top:80px;}

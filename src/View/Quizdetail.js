@@ -6,9 +6,12 @@ import DetailanswerContainer from '../Container/DetailanswerContainer';
 
 class Quizdetail extends Component {
     render() {
+        const marginRemove={
+            margin:"0",
+        }
         const { quiz } = this.props;
         return (
-            <Grid columns='three' divided>
+            <Grid columns='three' divided style={marginRemove}>
                 <Grid.Row>
                     <Grid.Column>
                         < DetailtextContainer />
