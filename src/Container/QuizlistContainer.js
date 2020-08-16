@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {inject,observer} from "mobx-react"
 import Quizlist from "../View/Quizlist"
-
+import generateId from "../IDGenerator";
 
 @inject("QuizStore")
 @observer
@@ -19,7 +19,7 @@ class QuizlistContainer extends Component {
     onAddQuiz = () =>{
         alert('answer / true or false');
         let quiz = {
-        ISBN: '9781617293986',
+        ISBN: generateId(5),
         };
         this.props.QuizStore.addQuiz(quiz);
     }
