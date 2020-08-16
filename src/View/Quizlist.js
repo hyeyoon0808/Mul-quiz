@@ -26,6 +26,7 @@ class Quizlist extends Component {
             onItemMouseOver,
             hoverquiz
         } = this.props;
+        
         const quizlist = quizs.map((quiz)=>(
             <Quizitem 
                 quiz={quiz}
