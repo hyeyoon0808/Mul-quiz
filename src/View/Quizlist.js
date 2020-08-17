@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Quizitem from "./Quizitem"
 import {ItemGroup} from "semantic-ui-react"
-import Button from '@material-ui/core/Button';
+import {Button } from 'semantic-ui-react'
 import styled from 'styled-components';
 
 
@@ -26,6 +26,7 @@ class Quizlist extends Component {
             onItemMouseOver,
             hoverquiz
         } = this.props;
+        
         const quizlist = quizs.map((quiz)=>(
             <Quizitem 
                 quiz={quiz}
@@ -43,7 +44,7 @@ class Quizlist extends Component {
                 <ItemGroup>{quizlist}</ItemGroup>
                 <Button 
                     variant="contained"
-                    color="primary" 
+                    primary
                     disableElevation
                     className={"center"}
                     onClick={() => onAddQuiz()}

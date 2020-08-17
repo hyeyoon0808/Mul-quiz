@@ -1,3 +1,4 @@
+  
 const Quizs = [
     {
         ISBN: '9781617293986',
@@ -23,39 +24,39 @@ const Quizs = [
                     'about how to use it with the Flux architecture? This is your book.'
     },
 
-    {
-        ISBN: '9780321125217',
-        title: 'Domain-Driven Design',
-        author: 'Eric Evans',
-        publisher: 'Addison-Wesley',
-        price: 73.33,
-        imgUrl: 'book_images/domain.jpg',
-        introduce: 'Explains how to incorporate effective domain modeling into the ' +
-                    'software development process.'
-    },
+    // {
+    //     ISBN: '9780321125217',
+    //     title: 'Domain-Driven Design',
+    //     author: 'Eric Evans',
+    //     publisher: 'Addison-Wesley',
+    //     price: 73.33,
+    //     imgUrl: 'book_images/domain.jpg',
+    //     introduce: 'Explains how to incorporate effective domain modeling into the ' +
+    //                 'software development process.'
+    // },
 
-    {
-        ISBN: '9781617294471',
-        title: 'Kafka Streams in Action',
-        author: 'Bill Bejeck',
-        publisher: 'Manning',
-        price: 43.82,
-        imgUrl: 'book_images/kafka.jpg',
-        introduce: 'SKafka Streams is a library designed to allow for easy ' + 
-                    'stream processing of data flowing into a Kafka cluster.'
-    },
+    // {
+    //     ISBN: '9781617294471',
+    //     title: 'Kafka Streams in Action',
+    //     author: 'Bill Bejeck',
+    //     publisher: 'Manning',
+    //     price: 43.82,
+    //     imgUrl: 'book_images/kafka.jpg',
+    //     introduce: 'SKafka Streams is a library designed to allow for easy ' + 
+    //                 'stream processing of data flowing into a Kafka cluster.'
+    // },
 
-    {
-        ISBN: '9780596805524',
-        title: 'JavaScript',
-        author: 'John Carnell',
-        publisher: 'O`Relly',
-        price: 49.19,
-        imgUrl: 'book_images/javascript.jpg',
-        introduce: 'Whether you need an example-driven programmer\'s guide ' + 
-                    'or a complete desk reference, JavaScript: The Definitive Guide is ' + 
-                    'the most authoritative book on this key language for Web 2.0 applications.'
-    }
+    // {
+    //     ISBN: '9780596805524',
+    //     title: 'JavaScript',
+    //     author: 'John Carnell',
+    //     publisher: 'O`Relly',
+    //     price: 49.19,
+    //     imgUrl: 'book_images/javascript.jpg',
+    //     introduce: 'Whether you need an example-driven programmer\'s guide ' + 
+    //                 'or a complete desk reference, JavaScript: The Definitive Guide is ' + 
+    //                 'the most authoritative book on this key language for Web 2.0 applications.'
+    // }
 ]
 
 export default Quizs;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {inject,observer} from "mobx-react"
 import Quizlist from "../View/Quizlist"
-
+import generateId from "../IDGenerator";
 
 @inject("QuizStore")
 @observer
@@ -17,8 +17,10 @@ class QuizlistContainer extends Component {
     }
 
     onAddQuiz = () =>{
-        let quiz = this.props.QuizStore.getselectquiz;
-        quiz = {...quiz};
+        alert('answer / true or false');
+        let quiz = {
+        ISBN: generateId(5),
+        };
         this.props.QuizStore.addQuiz(quiz);
     }
     onItemMouseOver = (quiz) => {

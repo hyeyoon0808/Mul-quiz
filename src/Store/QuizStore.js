@@ -18,6 +18,15 @@ class QuizStore {
     }
 
     @action
+    setQuizProps(name, value) {
+    console.log(name);
+        this.selectquiz = {
+        ...this.selectquiz,
+        [name]: value,
+        };
+    }
+
+    @action
     Remove(ISBN){
         this.quizs = this.quizs.filter(quiz => quiz.ISBN !== ISBN)
     }
@@ -36,6 +45,10 @@ class QuizStore {
         this.quizs.push(quiz);
     }
     
+    @action
+    Modify(quiz){
+        this.quizs = this.quizs.map((elem) => elem.ISBN === quiz.ISBN ? quiz : elem);
+    }
 
 }
 

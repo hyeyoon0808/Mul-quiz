@@ -39,27 +39,24 @@ class Quizitem extends Component {
 
         return (
             <ListItems>
-                {
-                    selectquiz === quiz ?
-                        <Item.Group className={classNames('ListItem', 'checked')}>
-                            <Item onClick={() => { onSelect(quiz) }}>
-                                <Item.Image size='tiny' src={quiz.imgUrl} />
-                                <Item.Content>
-                                    <Item.Header as='a'>{quiz.title}</Item.Header>
-                                    {/* <Item.Meta>Description</Item.Meta> */}
-                                    <Item.Description>
-                                        {/* <Image src='/images/wireframe/short-paragraph.png' /> */}
-                                        <p>{quiz.price}</p>
-                                    </Item.Description>
-                                    <Item.Extra>Additional Details</Item.Extra>
-                                    <MdDelete onClick={() => onRemove()}>제거</MdDelete>
-
+            {
+                selectquiz === quiz ?
+                    <Item.Group className={classNames('ListItem', 'checked')}>
+                        <Item onClick={() => { onSelect(quiz) }}>
+                            <Item.Image size='tiny' src={quiz.imgUrl} />
+                            <Item.Content>
+                                <Item.Header as='a'>{quiz.title}</Item.Header>
+                                {/* <Item.Meta>Description</Item.Meta> */}
+                                <Item.Description>
+                                    {/* <Image src='/images/wireframe/short-paragraph.png' /> */}
+                                    <p>{quiz.price}</p>
+                                </Item.Description>
+                                <Item.Extra>Additional Details</Item.Extra>
+                                <MdDelete onClick={() => onRemove()}>제거</MdDelete>
                                 </Item.Content>
                             </Item>
                         </Item.Group>
-
                         :
-
                         <Item.Group className={classNames('ListItem')}>
                             <Item
                                 onClick={() => { onSelect(quiz) }}
@@ -67,13 +64,15 @@ class Quizitem extends Component {
                                 onMouseLeave={() => { onItemMouseOver(false) }}
                             >
                                 <Item.Image size='tiny' src={quiz.imgUrl} />
-
                                 <Item.Content>
                                     <Item.Header as='a'>{quiz.title}</Item.Header>
                                     {/* <Item.Meta>Description</Item.Meta> */}
                                     <Item.Description>
                                         {/* <Image src='/images/wireframe/short-paragraph.png' /> */}
-                                        <p>{quiz.price}</p>
+                                        <p>{quiz.select1}</p>
+                                        <p>{quiz.select2}</p>
+                                        <p>{quiz.select3}</p>
+                                        <p>{quiz.select4}</p>
                                     </Item.Description>
                                     <Item.Extra>Additional Details</Item.Extra>
                                     {hoverquiz === quiz ? <MdDelete onClick={() => onRemove()}>제거</MdDelete> : ""}
@@ -81,7 +80,6 @@ class Quizitem extends Component {
                             </Item>
                         </Item.Group>
                 }
-
             </ListItems>
         );
     }

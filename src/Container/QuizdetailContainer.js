@@ -6,10 +6,16 @@ import Quizdetail from '../View/Quizdetail';
 
 @observer
 class QuizdetailContainer extends Component {
+
+    onModify=()=>{
+        const quiz=this.props.QuizStore.getselectquiz;
+        this.props.QuizStore.Modify(quiz);
+    }
+
     render() {
-        const quiz = this.props.QuizStore.getselectquiz;
+        
         return (
-            <div><Quizdetail quiz={quiz} /></div>
+            <div><Quizdetail onModify={this.onModify}/></div>
         );
     }
 }
