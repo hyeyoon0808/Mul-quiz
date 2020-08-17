@@ -19,7 +19,6 @@ class QuizStore {
 
     @action
     setQuizProps(name, value) {
-    console.log(name);
         this.selectquiz = {
         ...this.selectquiz,
         [name]: value,
