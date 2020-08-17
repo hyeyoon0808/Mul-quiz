@@ -21,7 +21,8 @@ const Nav = styled.div`
 `
 const margin = {
   marginRight:"10px",
-  color:"#fff"
+  color:"#fff",
+  fontWeight:"bold"
 }
 const svg ={
   fontSize:"2rem"
