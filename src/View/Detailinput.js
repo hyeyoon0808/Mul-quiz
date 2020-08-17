@@ -9,10 +9,6 @@ class Detailinput extends Component {
     
     const {quiz,setQuiz} = this.props;
 
-    const countryOptions = [
-      { key: 'af', value: 'af', text: 'single select' },
-      { key: 'ax', value: 'ax', text: 'multi select' },
-    ]
 
 
     return (
