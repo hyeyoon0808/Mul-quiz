@@ -9,6 +9,10 @@ class DetailanswerContainer extends Component {
     this.props.QuizStore.setQuizProps(name, value);
   };
 
+  setCheck = (e) => {
+    this.props.QuizStore.setCheckedProps(e);
+  };
+
   render() {
     const quiz = this.props.QuizStore.getselectquiz;
     return (

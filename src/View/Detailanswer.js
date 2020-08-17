@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TextArea, Grid, GridRow } from "semantic-ui-react";
 import Checkbox from "@material-ui/core/Checkbox";
+import { Switch } from "@material-ui/core";
 class Detailanswer extends Component {
   render() {
     const { quiz, setQuiz } = this.props;
@@ -16,9 +17,8 @@ class Detailanswer extends Component {
             <input
               type="checkbox"
               name="checkbox"
-              class="checkbox"
               value={quiz.check1}
-              checked={quiz.check1 ? true : false}
+              checked={quiz && quiz.check1 ? true : false}
               onChange={(e) => setQuiz("check1", true)}
             />
           </Grid.Column>

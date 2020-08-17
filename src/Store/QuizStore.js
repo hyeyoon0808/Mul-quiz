@@ -1,11 +1,14 @@
 import { observable, computed, action } from "mobx";
 import Quizs from "../Quiz";
+import { formatMs } from "@material-ui/core";
+import axios from "axios";
 
 class QuizStore {
   @observable quizs = Quizs;
   @observable selectquiz = Quizs[0];
   @observable hoverquiz;
   @observable checked = false;
+  @observable selectedFile = null;
 
   @computed
   get getquizs() {
@@ -21,6 +24,19 @@ class QuizStore {
   get getcheckedquiz() {
     return this.checked ? this.checked : {};
   }
+  @computed
+  get getPostProps() {
+    const formData = new FormData();
+    formData.append("file", this.selectedFile);
+    return axios
+      .post("/public/book_images", formData)
+      .then((res) => {
+        alert("succeed");
+      })
+      .catch((err) => {
+        alert("failed");
+      });
+  }
 
   @action
   setQuizProps(name, value) {
@@ -28,6 +44,15 @@ class QuizStore {
     this.selectquiz = {
       ...this.selectquiz,
       [name]: value,
+    };
+  }
+
+  @action
+  setFileProps(event) {
+    console.log(event);
+    this.selectquiz = {
+      ...this.selectquiz,
+      [this.selectquiz.imgUrl]: event.target.checked,
     };
   }
 
