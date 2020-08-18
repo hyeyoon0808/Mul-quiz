@@ -35,6 +35,10 @@ class QuizStore {
   @action
   setQuizProps(name, value) {
     console.log(name);
+    console.log(value.name, " Success!!");
+    // var data = new FormData();
+    // data.append("file", value);
+    // console.log("Form Data", data);
     this.selectquiz = {
       ...this.selectquiz,
       [name]: value,
@@ -54,6 +58,20 @@ class QuizStore {
       [this.selectquiz.imgUrl]: event.target.checked,
     };
   }
+
+  // @action
+  //  getPostProps() {
+  //   const formData = new FormData();
+  //   formData.append("file", this.selectedFile);
+  //   return axios
+  //     .post("/public/book_images", formData)
+  //     .then((res) => {
+  //       alert("succeed");
+  //     })
+  //     .catch((err) => {
+  //       alert("failed");
+  //     });
+  // }
 
   @action
   Remove(ISBN) {

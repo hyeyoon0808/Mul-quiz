@@ -1,4 +1,3 @@
-  
 const Quizs = [
   {
     ISBN: "9781617293986",
@@ -12,7 +11,10 @@ const Quizs = [
       "migration path from traditional monolithic Spring applications to " +
       "microservice-based applications that can be deployed to multiple " +
       "cloud platforms.",
-    complete: false,
+    check1: false,
+    check2: false,
+    check3: false,
+    check4: false,
   },
 
   {
@@ -25,7 +27,10 @@ const Quizs = [
     introduce:
       "Interested in React but find yourself confused " +
       "about how to use it with the Flux architecture? This is your book.",
-    complete: false,
+    check1: false,
+    check2: false,
+    check3: false,
+    check4: false,
   },
 
   // {

@@ -12,7 +12,7 @@ class Quizdetail extends Component {
             margin:"0",
         }
         return (
-            <Grid columns='three' divided style={marginRemove}>
+            <Grid style={marginRemove}>
                 <Grid.Row>
                     <Grid.Column>
                         < DetailtextContainer/>
@@ -20,9 +20,7 @@ class Quizdetail extends Component {
                 </Grid.Row>
 
                 <Grid.Row>
-                    <Grid.Column>
-                        < DetailinputContainer />
-                    </Grid.Column>
+                    < DetailinputContainer />
                 </Grid.Row>
 
                 <Grid.Row>

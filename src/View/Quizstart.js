@@ -7,10 +7,12 @@ import {
   Button,
   Image,
 } from "semantic-ui-react";
+import UserAns from "../Material/UserAns";
 
 class Quizstart extends Component {
   render() {
-    const { quiz, handleAlert } = this.props;
+    const { quiz, setQuiz } = this.props;
+
     return (
       // <div>
       //   <p>{quiz.title}</p>
@@ -43,6 +45,10 @@ class Quizstart extends Component {
         <Grid.Row>
           <Header as="h2">Answer</Header>
         </Grid.Row>
+        <Grid.Row>
+          <UserAns quiz={quiz} setQuiz={setQuiz} />
+        </Grid.Row>
+
         {/* <Grid.Row>
           <TextArea placeholder="empty" value={quiz.select1} />
           <Checkbox label="111"/>
