@@ -1,5 +1,7 @@
-import {observable,computed,action} from "mobx";
+import { observable, computed, action } from "mobx";
 import Quizs from "../Quiz";
+import { formatMs } from "@material-ui/core";
+import axios from "axios";
 
 class QuizStore {
     
@@ -8,15 +10,37 @@ class QuizStore {
     @observable hoverquiz;
     @observable gamestart = false;
 
-    @computed
-    get getquizs(){
-        return this.quizs ? this.quizs.slice() : [];
-    }
+    @observable checked = false;
+    @observable selectedFile = null;
 
-    @computed
-    get getselectquiz(){
-        return this.selectquiz ? this.selectquiz : {};
-    }
+  @computed
+  get getquizs() {
+    return this.quizs ? this.quizs.slice() : [];
+  }
+
+  @computed
+  get getselectquiz() {
+    return this.selectquiz ? this.selectquiz : {};
+  }
+
+  @computed
+  get getcheckedquiz() {
+    return this.checked ? this.checked : {};
+  }
+
+//   @computed
+//   get getPostProps() {
+//     const formData = new FormData();
+//     formData.append("file", this.selectedFile);
+//     return axios
+//       .post("/public/book_images", formData)
+//       .then((res) => {
+//         alert("succeed");
+//       })
+//       .catch((err) => {
+//         alert("failed");
+//       });
+//   }
 
     @computed
     get getgamestart(){
@@ -26,35 +50,42 @@ class QuizStore {
     @action
     setQuizProps(name, value) {
     console.log(name);
-        this.selectquiz = {
-        ...this.selectquiz,
-        [name]: value,
-        };
-    }
+    this.selectquiz = {
+      ...this.selectquiz,
+      [name]: value,
+    };
+  }
 
-    @action
-    Remove(ISBN){
-        this.quizs = this.quizs.filter(quiz => quiz.ISBN !== ISBN)
-    }
-    @action
-    selectQuiz(quiz){
-        this.selectquiz = quiz;
-    }
-    @action
-    ItemMouseOver(quiz){ 
-        this.hoverquiz = quiz
-    }
-    
-    
-    @action
-    addQuiz(quiz){
-        this.quizs.push(quiz);
-    }
-    
-    @action
-    Modify(quiz){
-        this.quizs = this.quizs.map((elem) => elem.ISBN === quiz.ISBN ? quiz : elem);
-    }
+  @action
+  setFileProps(event) {
+    console.log(event);
+    this.selectquiz = {
+      ...this.selectquiz,
+      [this.selectquiz.imgUrl]: event.target.checked,
+    };
+  }
+
+  @action
+  Remove(ISBN) {
+    this.quizs = this.quizs.filter((quiz) => quiz.ISBN !== ISBN);
+  }
+
+  @action
+  ItemMouseOver(quiz) {
+    this.hoverquiz = quiz;
+  }
+
+  @action
+  addQuiz(quiz) {
+    this.quizs.push(quiz);
+  }
+
+  @action
+  Modify(quiz) {
+    this.quizs = this.quizs.map((elem) =>
+      elem.ISBN === quiz.ISBN ? quiz : elem
+    );
+  }
 
     @action
     setstart(value){

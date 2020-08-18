@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import React, { Component } from "react";
+import { Grid } from "semantic-ui-react";
 import QuizlistContainer from "./Container/QuizlistContainer";
 import QuizdetailContainer from "./Container/QuizdetailContainer";
 import Nav from './Material/Nav';
@@ -7,8 +7,7 @@ import './App.scss';
 import styled from 'styled-components';
 import {inject,observer} from "mobx-react";
 
-const Wrap = styled.div`
-`
+const Wrap = styled.div``;
 
 @inject("QuizStore")
 @observer
