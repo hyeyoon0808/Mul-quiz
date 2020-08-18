@@ -10,7 +10,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 
-class Detailanswer extends Component {
+class QuizstartAnswer extends Component {
   render() {
     const style1 = {
       background: "red",
@@ -100,4 +100,4 @@ class Detailanswer extends Component {
   }
 }
 
-export default Detailanswer;
+export default QuizstartAnswer;

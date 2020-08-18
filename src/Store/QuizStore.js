@@ -4,14 +4,13 @@ import { formatMs } from "@material-ui/core";
 import axios from "axios";
 
 class QuizStore {
-    
-    @observable quizs=Quizs;
-    @observable selectquiz = Quizs[0];
-    @observable hoverquiz;
-    @observable gamestart = false;
+  @observable quizs = Quizs;
+  @observable selectquiz = Quizs[0];
+  @observable hoverquiz;
+  @observable gamestart = false;
 
-    @observable checked = false;
-    @observable selectedFile = null;
+  @observable checked = false;
+  @observable selectedFile = null;
 
   @computed
   get getquizs() {
@@ -27,44 +26,14 @@ class QuizStore {
   get getcheckedquiz() {
     return this.checked ? this.checked : {};
   }
-<<<<<<< Updated upstream
-=======
-  // @computed
-  // get getPostProps() {
-  //   const formData = new FormData();
-  //   formData.append("file", this.selectedFile);
-  //   return axios
-  //     .post("/", formData)
-  //     .then((res) => {
-  //       alert("succeed");
-  //     })
-  //     .catch((err) => {
-  //       alert("failed");
-  //     });
-  // }
->>>>>>> Stashed changes
 
-//   @computed
-//   get getPostProps() {
-//     const formData = new FormData();
-//     formData.append("file", this.selectedFile);
-//     return axios
-//       .post("/public/book_images", formData)
-//       .then((res) => {
-//         alert("succeed");
-//       })
-//       .catch((err) => {
-//         alert("failed");
-//       });
-//   }
+  @computed
+  get getgamestart() {
+    return this.gamestart ? this.gamestart : false;
+  }
 
-    @computed
-    get getgamestart(){
-        return this.gamestart ? this.gamestart : false
-    }
-
-    @action
-    setQuizProps(name, value) {
+  @action
+  setQuizProps(name, value) {
     console.log(name);
     this.selectquiz = {
       ...this.selectquiz,
@@ -73,9 +42,9 @@ class QuizStore {
   }
 
   @action
-    selectQuiz(quiz){
-        this.selectquiz = quiz;
-    }
+  selectQuiz(quiz) {
+    this.selectquiz = quiz;
+  }
 
   @action
   setFileProps(event) {
@@ -108,11 +77,10 @@ class QuizStore {
     );
   }
 
-    @action
-    setstart(value){
-        this.gamestart = value;
-    }
-
+  @action
+  setstart(value) {
+    this.gamestart = value;
+  }
 }
 
 export default new QuizStore();
