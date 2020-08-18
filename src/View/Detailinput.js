@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import { Grid,Divider ,Button,Select ,Form} from 'semantic-ui-react'
-import Sel from "../Material/Sel"
-import { makeStyles } from '@material-ui/core/styles';
-import { withStyles} from '@material-ui/core/styles';
+import { Grid, Divider, Button, Select, Form } from "semantic-ui-react";
+import Sel from "../Material/Sel";
 
 class Detailinput extends Component {
-  
   render() {
-    
-
-    const {quiz,setQuiz,getPost} = this.props;
+    const { quiz, setQuiz, setImage } = this.props;
 
     return (
       <div>
@@ -41,9 +36,8 @@ class Detailinput extends Component {
             type="file"
             name="imgFile"
             id="imgFile"
-            onChange={(e) => setQuiz("imgUrl", e.target.value)}
+            onChange={(e) => setImage("imgUrl", e.target.files[0])}
           />
-          <Form.Button type="button" onClick={getPost} />
         </Form>
 
         <Divider />
@@ -59,9 +53,9 @@ class Detailinput extends Component {
 
         <Divider />
 
-    <p> Answer Option</p>
-      <Sel quiz={quiz}/>
-    </div>
+        <p> Answer Option</p>
+        <Sel quiz={quiz} />
+      </div>
     );
   }
 }
