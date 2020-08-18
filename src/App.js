@@ -13,9 +13,8 @@ const Wrap = styled.div``;
 @observer
 class App extends Component {
   
-  start = () =>{
-    console.log('start');
-    this.props.QuizStore.setstart(true);
+  start = (value) =>{
+    this.props.QuizStore.setstart(value);
   }
 
   render() {
@@ -29,13 +28,11 @@ class App extends Component {
     }
 
     const gamestart = this.props.QuizStore.getgamestart;
-    console.log(gamestart);
 
     return (
       <Wrap style={tempStyle} className={"navStyle"} >
         <Nav gamestart={gamestart} start={this.start}/>
         
-
           {gamestart && true ? 
           (
             <Grid columns={2} divided  style={marginRemove} >

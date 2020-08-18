@@ -95,6 +95,7 @@ class QuizStore {
     @action
     setstart(value){
         this.gamestart = value;
+        
     }
 
 }
