@@ -4,19 +4,10 @@ import Sel from "../Material/Sel"
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles} from '@material-ui/core/styles';
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-}));
-
 class Detailinput extends Component {
   
   render() {
-    const {classes} = this.props;
+    
 
     const {quiz,setQuiz,getPost} = this.props;
 
@@ -75,4 +66,4 @@ class Detailinput extends Component {
   }
 }
 
-export default withStyles(useStyles)(Detailinput);
+export default Detailinput;

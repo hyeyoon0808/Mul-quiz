@@ -57,6 +57,11 @@ class QuizStore {
   }
 
   @action
+    selectQuiz(quiz){
+        this.selectquiz = quiz;
+    }
+
+  @action
   setFileProps(event) {
     console.log(event);
     this.selectquiz = {
