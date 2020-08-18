@@ -7,8 +7,9 @@ import { MdDelete } from "react-icons/md";
 const ListItems = styled.div`
   .ListItem {
     width: 100%;
-    height: 150px;
-    padding: 10px;
+    height: auto;
+    padding: 15px;
+    font-size: 10px;
   }
   .checked {
     box-shadow: 0px 0px 10px #afafaf;
@@ -47,15 +48,13 @@ class Quizitem extends Component {
                 onSelect(quiz);
               }}
             >
-              <Item.Image size="tiny" src={quiz.imgUrl} />
               <Item.Content>
                 <Item.Header as="a">{quiz.title}</Item.Header>
+                <Item.Image size="tiny" src={quiz.imgUrl} />
                 {/* <Item.Meta>Description</Item.Meta> */}
                 <Item.Description>
                   {/* <Image src='/images/wireframe/short-paragraph.png' /> */}
-                  <p>{quiz.price}</p>
                 </Item.Description>
-                <Item.Extra>Additional Details</Item.Extra>
                 <MdDelete onClick={() => onRemove()}>제거</MdDelete>
               </Item.Content>
             </Item>
@@ -73,18 +72,13 @@ class Quizitem extends Component {
                 onItemMouseOver(false);
               }}
             >
-              <Item.Image size="tiny" src={quiz.imgUrl} />
               <Item.Content>
                 <Item.Header as="a">{quiz.title}</Item.Header>
+                <Item.Image size="tiny" src={quiz.imgUrl} />
                 {/* <Item.Meta>Description</Item.Meta> */}
                 <Item.Description>
                   {/* <Image src='/images/wireframe/short-paragraph.png' /> */}
-                  <p>{quiz.select1}</p>
-                  <p>{quiz.select2}</p>
-                  <p>{quiz.select3}</p>
-                  <p>{quiz.select4}</p>
                 </Item.Description>
-                <Item.Extra>Additional Details</Item.Extra>
                 {hoverquiz === quiz ? (
                   <MdDelete onClick={() => onRemove()}>제거</MdDelete>
                 ) : (

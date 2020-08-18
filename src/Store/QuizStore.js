@@ -27,6 +27,22 @@ class QuizStore {
   get getcheckedquiz() {
     return this.checked ? this.checked : {};
   }
+<<<<<<< Updated upstream
+=======
+  // @computed
+  // get getPostProps() {
+  //   const formData = new FormData();
+  //   formData.append("file", this.selectedFile);
+  //   return axios
+  //     .post("/", formData)
+  //     .then((res) => {
+  //       alert("succeed");
+  //     })
+  //     .catch((err) => {
+  //       alert("failed");
+  //     });
+  // }
+>>>>>>> Stashed changes
 
 //   @computed
 //   get getPostProps() {
