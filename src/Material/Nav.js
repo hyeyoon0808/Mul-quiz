@@ -181,12 +181,20 @@ export default function PrimarySearchAppBar({gamestart,start}) {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button variant="contained" color="secondary"  style={margin}>Exit</Button>
-            <ThemeProvider theme={theme} >
-              <Button variant="contained" color="primary" className={classes.margin} style={margin} onClick={start}>
-                Done
-              </Button>
-            </ThemeProvider>
+
+          {gamestart === false ?
+              <>
+                <Button variant="contained" color="secondary"  style={margin}>Exit</Button>
+                <ThemeProvider theme={theme} >
+                <Button variant="contained" color="primary" className={classes.margin} style={margin} onClick={()=>start(true)}>
+                  Done
+                </Button>
+              </ThemeProvider>
+              </>
+            : <Button variant="contained" color="secondary" style={margin} onClick={()=>start(false)}>Exit</Button>
+            }{console.log(gamestart)}
+
+
             <IconButton
               edge="end"
               aria-label="account of current user"

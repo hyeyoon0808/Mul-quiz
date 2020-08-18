@@ -35,16 +35,6 @@ class QuizStore {
   @action
   setQuizProps(name, value) {
     console.log(name);
-    console.log(value);
-    this.selectquiz = {
-      ...this.selectquiz,
-      [name]: value,
-    };
-  }
-
-  @action
-  setImageProps(name, value) {
-    console.log(name);
     console.log(value.name, " Success!!");
     // var data = new FormData();
     // data.append("file", value);
