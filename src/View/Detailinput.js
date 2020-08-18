@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import { Grid,Divider ,Button,Select ,Form} from 'semantic-ui-react'
 import Sel from "../Material/Sel"
+import { makeStyles } from '@material-ui/core/styles';
+import { withStyles} from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 class Detailinput extends Component {
-
   
   render() {
-    
+    const {classes} = this.props;
+
     const {quiz,setQuiz} = this.props;
-
-
 
     return (
     
@@ -35,10 +44,10 @@ class Detailinput extends Component {
     <Divider />
 
     <p> Answer Option</p>
-      <Sel/>
+      <Sel quiz={quiz}/>
     </div>
     );
   }
 }
 
-export default Detailinput;
+export default withStyles(useStyles)(Detailinput);

@@ -6,6 +6,7 @@ class QuizStore {
     @observable quizs=Quizs;
     @observable selectquiz = Quizs[0];
     @observable hoverquiz;
+    @observable gamestart = false;
 
     @computed
     get getquizs(){
@@ -15,6 +16,11 @@ class QuizStore {
     @computed
     get getselectquiz(){
         return this.selectquiz ? this.selectquiz : {};
+    }
+
+    @computed
+    get getgamestart(){
+        return this.gamestart ? this.gamestart : false
     }
 
     @action
@@ -48,6 +54,11 @@ class QuizStore {
     @action
     Modify(quiz){
         this.quizs = this.quizs.map((elem) => elem.ISBN === quiz.ISBN ? quiz : elem);
+    }
+
+    @action
+    setstart(value){
+        this.gamestart = value;
     }
 
 }

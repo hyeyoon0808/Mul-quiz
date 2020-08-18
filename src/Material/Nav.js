@@ -87,7 +87,8 @@ const theme = createMuiTheme({
   },
 });
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({gamestart,start}) {
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -150,6 +151,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
+    
     <Nav className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
@@ -181,7 +183,7 @@ export default function PrimarySearchAppBar() {
           <div className={classes.sectionDesktop}>
             <Button variant="contained" color="secondary"  style={margin}>Exit</Button>
             <ThemeProvider theme={theme} >
-              <Button variant="contained" color="primary" className={classes.margin} style={margin}>
+              <Button variant="contained" color="primary" className={classes.margin} style={margin} onClick={start}>
                 Done
               </Button>
             </ThemeProvider>
