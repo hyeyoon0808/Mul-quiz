@@ -17,6 +17,7 @@ const MapList = styled.div`
 
 class Quizlist extends Component {
   render() {
+    const arr = [1, 2, 3, 4, 5];
     const {
       quizs,
       onRemove,

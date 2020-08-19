@@ -36,21 +36,37 @@ const useStyles = makeStyles((theme) => ({
     background: "#e0102f",
     borderRadius: "10px",
     color: "white",
+    "&:focus": {
+      outline: "none",
+      transform: "scale(1.04)",
+    },
   },
   style2: {
     background: "#1273de",
     borderRadius: "10px",
     color: "white",
+    "&:focus": {
+      outline: "none",
+      transform: "scale(1.04)",
+    },
   },
   style3: {
     background: "#e9ab01",
     borderRadius: "10px",
     color: "white",
+    "&:focus": {
+      outline: "none",
+      transform: "scale(1.04)",
+    },
   },
   style4: {
     background: "#049106",
     borderRadius: "10px",
     color: "white",
+    "&:focus": {
+      outline: "none",
+      transform: "scale(1.04)",
+    },
   },
 }));
 const inputStyle = {
