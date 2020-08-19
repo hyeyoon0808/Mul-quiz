@@ -3,6 +3,7 @@ import { Header, Image, Segment } from "semantic-ui-react";
 import UserAns from "../Material/UserAns";
 import { Hidden } from "@material-ui/core";
 import ReactTimeout from "react-timeout";
+import Timeout from "../Material/Timeout";
 
 class Quizstart extends Component {
   constructor(props) {
@@ -12,9 +13,11 @@ class Quizstart extends Component {
     };
     this.toggle = this.toggle.bind(this);
   }
+
   toggle = () => {
     this.setState({ on: !this.state.on });
   };
+
   handleClick = (value, e) => {
     setTimeout(this.toggle, value * 1000);
     console.log(value);
@@ -22,7 +25,7 @@ class Quizstart extends Component {
 
   render() {
     const { quiz, setQuiz } = this.props;
-
+    
     const imgForm = {
       width: "100%",
       overflow: " hidden",
@@ -65,12 +68,22 @@ class Quizstart extends Component {
             {quiz.title}
           </Header>
         </Segment>
+
         <div
           style={{
             backgroundColor: this.state.on ? alert("시간 초과입니다.") : {},
           }}
         >
+          <Timeout quiz={quiz}/>
+
+          {
+            this.state.on ? <Timeout/> : console.log('시간 초과입니다.')
+          }
+
           <button onClick={() => this.handleClick(quiz.time)}>start</button>
+
+
+
         </div>
         <div>
           <div>
