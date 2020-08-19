@@ -8,7 +8,7 @@ const ListItems = styled.div`
   .ListItem {
     width: 100%;
     height: auto;
-    padding: 15px;
+    padding: 10px;
     font-size: 10px;
   }
   .checked {
