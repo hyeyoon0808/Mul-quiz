@@ -9,27 +9,40 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
     },
   },
+  text: {
+    '& .MuiInputBase-root': {
+      height: '120px',
+      fontSize: '2em',
+      textAlign: 'center'
+    },
+    '& .MuiInputBase-input': {
+      
+      textAlign: 'center'
+    },
+    '& .MuiFormLabel-root': {
+      
+      textAlign: 'center'
+    },
+  },
 }));
 
 export default function MultilineTextFields({quiz,setQuiz}) {
   const classes = useStyles();
   const [value, setValue] = React.useState('Controlled');
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+ 
   return (
     <form className={classes.root} noValidate autoComplete="off">
       
     <div>
         <TextField
+        
+        className={classes.text}
         id="filled-textarea"
-        label="Click to start typing your question"
-        multiline
-        variant="filled"
+        label={quiz && quiz.title ? "" : "Click to start typing your question"} 
         value={quiz && quiz.title ? quiz.title : ""}
         onChange={(e) => setQuiz("title", e.target.value)}
+        variant="outlined"
         />
         
     </div>

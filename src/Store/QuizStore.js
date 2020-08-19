@@ -1,6 +1,7 @@
 import { observable, computed, action } from "mobx";
 import Quizs from "../Quiz";
 
+
 class QuizStore {
     
     @observable quizs=Quizs;
@@ -20,7 +21,6 @@ class QuizStore {
     @observable pwValue = "";
     @observable preventDefault = "";
 
-
   @computed
   get getquizs() {
     return this.quizs ? this.quizs.slice() : [];
@@ -36,19 +36,6 @@ class QuizStore {
     return this.checked ? this.checked : {};
   }
 
-//   @computed
-//   get getPostProps() {
-//     const formData = new FormData();
-//     formData.append("file", this.selectedFile);
-//     return axios
-//       .post("/public/book_images", formData)
-//       .then((res) => {
-//         alert("succeed");
-//       })
-//       .catch((err) => {
-//         alert("failed");
-//       });
-//   }
 
     @computed
     get getgamestart(){
