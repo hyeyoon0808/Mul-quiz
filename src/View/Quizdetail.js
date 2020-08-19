@@ -3,7 +3,6 @@ import { Grid, Button } from 'semantic-ui-react'
 import DetailinputContainer from '../Container/DetailinputContainer';
 import DetailtextContainer from '../Container/DetailtextContainer';
 import DetailanswerContainer from '../Container/DetailanswerContainer';
-
 class Quizdetail extends Component {
     
     render() {
@@ -11,6 +10,7 @@ class Quizdetail extends Component {
         const marginRemove={
             margin:"0",
         }
+        
         return (
             <Grid style={marginRemove}>
                 <Grid.Row>
@@ -20,6 +20,7 @@ class Quizdetail extends Component {
                 </Grid.Row>
 
                 <Grid.Row>
+                
                     < DetailinputContainer />
                 </Grid.Row>
 

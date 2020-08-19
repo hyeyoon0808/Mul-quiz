@@ -13,6 +13,7 @@ const Quizs = [
       "microservice-based applications that can be deployed to multiple " +
       "cloud platforms.",
     complete: false,
+    check1:false,
   },
 
   {

@@ -28,20 +28,6 @@ class QuizStore {
     return this.checked ? this.checked : {};
   }
 
-//   @computed
-//   get getPostProps() {
-//     const formData = new FormData();
-//     formData.append("file", this.selectedFile);
-//     return axios
-//       .post("/public/book_images", formData)
-//       .then((res) => {
-//         alert("succeed");
-//       })
-//       .catch((err) => {
-//         alert("failed");
-//       });
-//   }
-
     @computed
     get getgamestart(){
         return this.gamestart ? this.gamestart : false
@@ -50,6 +36,7 @@ class QuizStore {
     @action
     setQuizProps(name, value) {
     console.log(name);
+    console.log(value);
     this.selectquiz = {
       ...this.selectquiz,
       [name]: value,
