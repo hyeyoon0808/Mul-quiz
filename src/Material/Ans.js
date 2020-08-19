@@ -1,7 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
-import TextField from "@material-ui/core/TextField";
+import StarIcon from "@material-ui/icons/Star";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
+import Brightness1Icon from "@material-ui/icons/Brightness1";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,25 +26,29 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
     position: "relative",
     border: "none",
-    height: "90px",
+    height: "120px",
     fontSize: "20px",
     padding: "5px",
   },
   style1: {
-    background: "red",
+    background: "#e0102f",
     borderRadius: "10px",
+    color: "white",
   },
   style2: {
-    background: "blue",
+    background: "#1273de",
     borderRadius: "10px",
+    color: "white",
   },
   style3: {
-    background: "yellow",
+    background: "#e9ab01",
     borderRadius: "10px",
+    color: "white",
   },
   style4: {
-    background: "green",
+    background: "#049106",
     borderRadius: "10px",
+    color: "white",
   },
 }));
 const inputStyle = {
@@ -51,6 +62,11 @@ const checkStyle = {
   right: "0",
   top: "0",
   zIndex: 1,
+  color: "white",
+  stroke: "currentColor",
+  strokeWidth: "1",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
 };
 const styleCheck = {
   borderRadius: "10px",
@@ -58,11 +74,18 @@ const styleCheck = {
 
 export default function BasicTextFields({ quiz, setQuiz }) {
   const classes = useStyles();
-
   return (
     <form noValidate autoComplete="off">
       <div className={classes.styleCheck} style={styleCheck}>
         <Checkbox
+          icon={
+            <RadioButtonUncheckedIcon
+              style={{ color: "white", fontSize: "30px" }}
+            />
+          }
+          checkedIcon={
+            <Brightness1Icon style={{ color: "white", fontSize: "30px" }} />
+          }
           checked={quiz && quiz.check1 ? true : false}
           onChange={(event) => setQuiz("check1", event.target.checked)}
           inputProps={{ "aria-label": "primary checkbox" }}
@@ -82,6 +105,10 @@ export default function BasicTextFields({ quiz, setQuiz }) {
       </div>
       <div className={classes.styleCheck}>
         <Checkbox
+          icon={<StarBorderIcon style={{ color: "white", fontSize: "32px" }} />}
+          checkedIcon={
+            <StarIcon style={{ color: "white", fontSize: "32px" }} />
+          }
           checked={quiz && quiz.check2 ? true : false}
           onChange={(event) => setQuiz("check2", event.target.checked)}
           inputProps={{ "aria-label": "primary checkbox" }}
@@ -101,6 +128,12 @@ export default function BasicTextFields({ quiz, setQuiz }) {
       </div>
       <div className={classes.styleCheck}>
         <Checkbox
+          icon={
+            <FavoriteBorderIcon style={{ color: "white", fontSize: "30px" }} />
+          }
+          checkedIcon={
+            <FavoriteIcon style={{ color: "white", fontSize: "30px" }} />
+          }
           checked={quiz.check3}
           onChange={(event) => setQuiz("check3", event.target.checked)}
           inputProps={{ "aria-label": "primary checkbox" }}
@@ -119,6 +152,16 @@ export default function BasicTextFields({ quiz, setQuiz }) {
       </div>
       <div className={classes.styleCheck}>
         <Checkbox
+          icon={
+            <CheckBoxOutlineBlankIcon
+              style={{ color: "white", fontSize: "30px" }}
+            />
+          }
+          checkedIcon={
+            <IndeterminateCheckBoxIcon
+              style={{ color: "white", fontSize: "30px" }}
+            />
+          }
           checked={quiz.check4}
           onChange={(event) => setQuiz("check4", event.target.checked)}
           inputProps={{ "aria-label": "primary checkbox" }}

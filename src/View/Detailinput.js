@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Divider, Button, Select, Form } from "semantic-ui-react";
+import { Grid, Divider, Form } from "semantic-ui-react";
 import Sel from "../Material/Sel";
 import Point from "../Material/Point";
-import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/core/styles";
 
 class Detailinput extends Component {
   constructor(props) {

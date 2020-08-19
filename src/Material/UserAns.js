@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 import StarIcon from "@material-ui/icons/Star";
@@ -29,58 +28,47 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
     position: "relative",
     border: "none",
-    height: "90px",
+    height: "120px",
     fontSize: "20px",
     padding: "5px",
   },
   style1: {
-    background: "red",
+    background: "#e0102f",
     borderRadius: "10px",
-    width: "100%",
-    height: "100%",
-    border: "none",
-    paddingLeft: "70px",
     color: "white",
-    fontSize: "25px",
   },
   style2: {
-    background: "blue",
+    background: "#1273de",
     borderRadius: "10px",
-    width: "100%",
-    height: "100%",
-    border: "none",
-    paddingLeft: "20px",
-    paddingLeft: "70px",
     color: "white",
-    fontSize: "25px",
   },
   style3: {
-    background: "yellow",
+    background: "#e9ab01",
     borderRadius: "10px",
-    width: "100%",
-    height: "100%",
-    border: "none",
-    paddingLeft: "70px",
     color: "white",
-    fontSize: "25px",
   },
   style4: {
-    background: "green",
+    background: "#049106",
     borderRadius: "10px",
-    width: "100%",
-    height: "100%",
-    border: "none",
-    paddingLeft: "70px",
     color: "white",
-    fontSize: "25px",
   },
 }));
-
+const inputStyle = {
+  width: "100%",
+  height: "100%",
+  border: "none",
+  paddingLeft: "20px",
+};
 const checkStyle = {
   position: "absolute",
-  left: "30px",
-  top: "23px",
+  right: "0",
+  top: "0",
   zIndex: 1,
+  color: "white",
+  stroke: "currentColor",
+  strokeWidth: "1",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
 };
 const styleCheck = {
   borderRadius: "10px",
@@ -177,6 +165,7 @@ export default function Checkboxes({ quiz }) {
           value={quiz && quiz.select1 ? quiz.select1 : ""}
           readOnly
           onfocus="this.blur()"
+          style={inputStyle}
         />
       </div>
       <div className={classes.styleCheck} style={styleCheck}>
@@ -198,6 +187,7 @@ export default function Checkboxes({ quiz }) {
           value={quiz && quiz.select2 ? quiz.select2 : ""}
           readOnly
           onfocus="this.blur()"
+          style={inputStyle}
         />
       </div>
       <div className={classes.styleCheck} style={styleCheck}>
@@ -221,6 +211,7 @@ export default function Checkboxes({ quiz }) {
           value={quiz && quiz.select3 ? quiz.select3 : ""}
           readOnly
           onfocus="this.blur()"
+          style={inputStyle}
         />
       </div>
       <div className={classes.styleCheck} style={styleCheck}>
@@ -248,6 +239,7 @@ export default function Checkboxes({ quiz }) {
           value={quiz && quiz.select4 ? quiz.select4 : ""}
           readOnly
           onfocus="this.blur()"
+          style={inputStyle}
         />
       </div>
       <div>
