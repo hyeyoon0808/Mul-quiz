@@ -3,6 +3,7 @@ import Quizitem from "./Quizitem";
 import { ItemGroup } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import styled from "styled-components";
+import Import from "../Material/Import";
 import Add from "../Material/Add";
 
 const MapList = styled.div`
@@ -13,7 +14,9 @@ const MapList = styled.div`
     display: block;
     margin: 0 auto;
   }
-`;
+  .import>button{margin-top:100px;}
+`
+
 
 class Quizlist extends Component {
   render() {
@@ -40,12 +43,16 @@ class Quizlist extends Component {
     ));
 
     return (
+      <>
       <MapList>
         <ItemGroup>{quizlist}</ItemGroup>
 
         <Add onAddQuiz={onAddQuiz}/>
-          
+        <div className={"import"}>
+          <Import/>
+        </div>
       </MapList>
+      </>
     );
   }
 }
