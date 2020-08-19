@@ -4,13 +4,12 @@ import Sel from "../Material/Sel";
 import Point from "../Material/Point";
 import Time from "../Material/Time";
 import styled from "styled-components";
-import { makeStyles } from '@material-ui/core/styles';
 
 
 const InputForm = styled.div`
   .gridForm{position:relative;}
   .profileBox{
-    margin:20px auto;
+    margin:30px auto;
     width:75%;
     height:300px;
     border:2px dotted #d9d9d9;
@@ -60,8 +59,9 @@ class Detailinput extends Component {
       top:"50%",
       left:"50%",
       transform:"translate(-50%,-50%)",
-      boxShadow:"none",
-      border:"1px solid #d9d9d9"
+      boxShadow:"2px 2px 8px 2px #ececec",
+      border:"1px solid #d9d9d9",
+      borderRadius:"20px",
     }
     const leftForm = {width:"20%",textAlign:"center"}
     return (

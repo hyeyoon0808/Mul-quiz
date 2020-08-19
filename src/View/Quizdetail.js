@@ -6,7 +6,7 @@ import DetailanswerContainer from "../Container/DetailanswerContainer";
 import styled from "styled-components";
 
 const QuizInputForm = styled.div`
-  .rowForm{position:relative; margin:50px 0;}
+  .rowForm{position:relative; margin:70px 0;}
   .rowForm>div:nth-of-type(1){
     width:94%;
     margin:0 auto;
@@ -19,7 +19,14 @@ class Quizdetail extends Component {
     const marginRemove = {
       margin: "0",
     };
-
+    const modifyBtn={
+      position:"absolute",
+      bottom:"33%",
+      right:"2%",
+      width:"200px",
+      height:"50px",
+      fontSize:"18px"
+    }
     return (
       <QuizInputForm>
         <Grid style={marginRemove}>
@@ -39,8 +46,8 @@ class Quizdetail extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          <Button primary onClick={onModify}>
-            수정하기
+          <Button primary onClick={onModify} style={modifyBtn}>
+            Modify
           </Button>
         </Grid>
       </QuizInputForm>
