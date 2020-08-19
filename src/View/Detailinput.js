@@ -4,11 +4,13 @@ import Sel from "../Material/Sel";
 import Point from "../Material/Point";
 import Time from "../Material/Time";
 import styled from "styled-components";
+import { makeStyles } from '@material-ui/core/styles';
+
 
 const InputForm = styled.div`
   .gridForm{position:relative;}
   .profileBox{
-    margin:0 auto;
+    margin:20px auto;
     width:75%;
     height:300px;
     border:2px dotted #d9d9d9;
@@ -18,6 +20,7 @@ const InputForm = styled.div`
     margin:0 auto;
   }
 `
+
 
 class Detailinput extends Component {
   constructor(props) {
@@ -85,16 +88,17 @@ class Detailinput extends Component {
                 id="imgFile"
                 onChange={this.handleFileOnChange}
               />
+              
               <div className={"profileBox"}>
                 {profile_preview} 
               </div>
-              
-              {console.log(this.state.file + "1231321")}
-              <Divider className="test" />
+             
+            
             </Form>
           </Grid.Column>
         </Grid>
       </InputForm>
+      
     );
   }
 }
