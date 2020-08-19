@@ -17,7 +17,6 @@ const MapList = styled.div`
 
 class Quizlist extends Component {
   render() {
-    const arr = [1, 2, 3, 4, 5];
     const {
       quizs,
       onRemove,
@@ -28,8 +27,9 @@ class Quizlist extends Component {
       hoverquiz,
     } = this.props;
 
-    const quizlist = quizs.map((quiz) => (
+    const quizlist = quizs.map((quiz, index) => (
       <Quizitem
+        id={index + 1}
         quiz={quiz}
         onRemove={onRemove}
         onSelect={onSelect}
@@ -44,8 +44,7 @@ class Quizlist extends Component {
       <MapList>
         <ItemGroup>{quizlist}</ItemGroup>
 
-        <Add onAddQuiz={onAddQuiz}/>
-          
+        <Add onAddQuiz={onAddQuiz} />
       </MapList>
     );
   }

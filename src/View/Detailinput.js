@@ -3,7 +3,6 @@ import { Grid, Divider, Form } from "semantic-ui-react";
 import Sel from "../Material/Sel";
 import Point from "../Material/Point";
 import Time from "../Material/Time";
-
 class Detailinput extends Component {
   constructor(props) {
     super(props);
