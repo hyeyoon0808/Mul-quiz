@@ -1,5 +1,5 @@
 import React from 'react';
-import { fade, makeStyles,ThemeProvider,createMuiTheme } from '@material-ui/core/styles';
+import { fade, makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -12,20 +12,23 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
-import { green,} from '@material-ui/core/colors';
+import { green, } from '@material-ui/core/colors';
+import { Link } from 'react-router-dom';
 
 const Nav = styled.div`
+    margin-bottom:50px;
     .MuiToolbar-root{
         height:80px;
+    .routerColor{color:#fff;}
     }
 `
 const margin = {
-  marginRight:"10px",
-  color:"#fff",
-  fontWeight:"bold"
+  marginRight: "10px",
+  color: "#fff",
+  fontWeight: "bold"
 }
-const svg ={
-  fontSize:"2rem"
+const svg = {
+  fontSize: "2rem"
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -87,7 +90,10 @@ const theme = createMuiTheme({
   },
 });
 
-export default function PrimarySearchAppBar({gamestart,start}) {
+export default function PrimarySearchAppBar({ login, onLoginClick }) {
+  const loginMove = () => {
+    alert("로그인이 필요한 서비스입니다. 로그인 페이지로 이동합니다.")
+  }
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -119,6 +125,7 @@ export default function PrimarySearchAppBar({gamestart,start}) {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
+
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
@@ -151,7 +158,6 @@ export default function PrimarySearchAppBar({gamestart,start}) {
   );
 
   return (
-    
     <Nav className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
@@ -182,30 +188,52 @@ export default function PrimarySearchAppBar({gamestart,start}) {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
 
-          {gamestart === false ?
+            <ThemeProvider theme={theme} >
+              {login ?
+                <Link to="/quiz">
+                <Button variant="contained" color="secondary" className={classes.margin} style={margin}>
+                  Create
+                </Button>
+              </Link> 
+              :
+              <Link to="/login">
+                <Button variant="contained" color="secondary" className={classes.margin} onClick={loginMove} style={margin}>
+                  Create
+                </Button>
+              </Link> 
+            }
+              
+              
+            </ThemeProvider>
+
+            {login ?
               <>
-                <Button variant="contained" color="secondary"  style={margin}>Exit</Button>
                 <ThemeProvider theme={theme} >
-                <Button variant="contained" color="primary" className={classes.margin} style={margin} onClick={()=>start(true)}>
-                  Done
+                  <Button variant="contained" color="primary" onClick={onLoginClick} className={classes.margin} style={margin}>
+                    <div to="/logIn" className={"routerColor"}>LogOut</div>
+                  </Button>
+                </ThemeProvider>
+                <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <AccountCircle style={svg} />
+                </IconButton>
+              </>
+
+              :
+
+              <ThemeProvider theme={theme} >
+                <Button variant="contained" color="primary" className={classes.margin} style={margin}>
+                  <Link to="/logIn" className={"routerColor"}>LogIn</Link>
                 </Button>
               </ThemeProvider>
-              </>
-            : <Button variant="contained" color="secondary" style={margin} onClick={()=>start(false)}>Exit</Button>
-            }{console.log(gamestart)}
+            }
 
-
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-              
-            >
-              <AccountCircle style={svg} />
-            </IconButton>
           </div>
         </Toolbar>
       </AppBar>
@@ -214,5 +242,3 @@ export default function PrimarySearchAppBar({gamestart,start}) {
     </Nav>
   );
 }
-
-

@@ -1,39 +1,21 @@
-import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
-import QuizlistContainer from "./Container/QuizlistContainer";
-import QuizdetailContainer from "./Container/QuizdetailContainer";
-import Nav from './Material/Nav';
+import React, { Component } from "react";
 import './App.scss';
-import styled from 'styled-components';
-
-const Wrap = styled.div`
-`
+import QuizPage from "./pages/QuizPage";
+import LogInPage from "./pages/LogInPage";
+import registerPage from "./pages/registerPage";
+import MainPage from "./pages/MainPage";
+import { Route } from 'react-router-dom';
 
 class App extends Component {
-
+  
   render() {
-    const tempStyle = {
-      padding:"0px",
-      height:"100%"
-    }
-    const marginRemove ={
-      height:'100%',
-      margin:"0px"
-    }
     return (
-      <Wrap style={tempStyle} className={"navStyle"} >
-        <Nav/>
-        <Grid columns={2} divided  style={marginRemove} >
-          <Grid.Row  style={tempStyle} >
-            <Grid.Column width={3} style={tempStyle} >
-              <QuizlistContainer />
-            </Grid.Column>
-            <Grid.Column width={13}>
-              <QuizdetailContainer />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Wrap>
+      <>
+      <Route component={MainPage} path="/" exact={true} />
+      <Route component={LogInPage} path="/Login" />
+      <Route component={registerPage} path="/register" />
+      <Route component={QuizPage} path="/Quiz" />
+      </>
     );
   }
 }
