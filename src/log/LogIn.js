@@ -15,7 +15,7 @@ const AuthFormBlock = styled.div`
    font-weight:bold;
    color:#1e70bf;
    font-size:20px;
-   margin:20px 0 10px;
+   margin:20px 0 15px;
    display:block;
  }
 `;

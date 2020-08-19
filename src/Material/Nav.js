@@ -7,20 +7,21 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import { green,} from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
-import mainLogo from './mainLogo.png'
+import mainLogo from '../image/mainLogo.png'
 
 const Nav = styled.div`
     .MuiToolbar-root{
         height:90px;
     }
     .exitColor{color:#fff;}
+    .mainLink{width:55%; display:block;}
+    .logoImg{width:100%;}
 `
 const margin = {
   marginRight:"15px",
@@ -42,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: 'none',
+    paddingLeft:"30px",
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -53,11 +55,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
       width: 'auto',
     },
   },
@@ -74,13 +74,14 @@ const useStyles = makeStyles((theme) => ({
     color: 'inherit',
   },
   inputInput: {
+    height:'35px',
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch',
+      width: '300px',
     },
   },
 }));
@@ -160,14 +161,6 @@ export default function PrimarySearchAppBar({gamestart,start}) {
     <Nav className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon style={svg} />
-          </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             <Link to="/" className="mainLink"><img src={mainLogo} alt={"mainLogo"} className={"logoImg"}/></Link>
           </Typography>
@@ -189,6 +182,7 @@ export default function PrimarySearchAppBar({gamestart,start}) {
 
           {gamestart === false ?
               <>
+                <Button variant="outlined" style={margin}>PreView</Button>
                 <Button variant="contained" color="secondary"  style={margin}>
                   <Link to ="/" className={"exitColor"} >Exit</Link>
                 </Button>
