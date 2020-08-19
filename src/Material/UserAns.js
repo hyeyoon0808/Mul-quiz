@@ -1,53 +1,90 @@
 import React from "react";
-import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
-const form = styled.div`
-  .ListItem {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    font-size: 10px;
-  }
-  .checked {
-    box-shadow: 0px 0px 10px #afafaf;
-    background: rgb(234, 244, 252);
-  }
-  &:hover {
-    background: #f2f2f2;
-  }
-  svg {
-    font-size: 20px;
-    cursor: pointer;
-    color: #58e2b6;
-    &:hover {
-      color: #ff7b7c;
-    }
-  }
-`;
+import StarIcon from "@material-ui/icons/Star";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
+import Brightness1Icon from "@material-ui/icons/Brightness1";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
+      overflow: "hidden",
       margin: theme.spacing(1),
-      width: "25ch",
+      width: "100%",
+      float: "center",
+      height: "50px",
+      display: "flex",
     },
+  },
+  styleCheck: {
+    float: "left",
+    width: "50%",
+    position: "relative",
+    border: "none",
+    height: "90px",
+    fontSize: "20px",
+    padding: "5px",
   },
   style1: {
     background: "red",
+    borderRadius: "10px",
+    width: "100%",
+    height: "100%",
+    border: "none",
+    paddingLeft: "70px",
+    color: "white",
+    fontSize: "25px",
   },
   style2: {
     background: "blue",
+    borderRadius: "10px",
+    width: "100%",
+    height: "100%",
+    border: "none",
+    paddingLeft: "20px",
+    paddingLeft: "70px",
+    color: "white",
+    fontSize: "25px",
   },
   style3: {
     background: "yellow",
+    borderRadius: "10px",
+    width: "100%",
+    height: "100%",
+    border: "none",
+    paddingLeft: "70px",
+    color: "white",
+    fontSize: "25px",
   },
   style4: {
     background: "green",
+    borderRadius: "10px",
+    width: "100%",
+    height: "100%",
+    border: "none",
+    paddingLeft: "70px",
+    color: "white",
+    fontSize: "25px",
   },
 }));
+
+const checkStyle = {
+  position: "absolute",
+  left: "30px",
+  top: "23px",
+  zIndex: 1,
+};
+const styleCheck = {
+  borderRadius: "10px",
+};
 
 export default function Checkboxes({ quiz }) {
   const classes = useStyles();
@@ -56,13 +93,39 @@ export default function Checkboxes({ quiz }) {
   const [checked3, setChecked3] = React.useState(false);
   const [checked4, setChecked4] = React.useState(false);
 
-  const [check1, setCheck1] = React.useState(true);
-  const [check2, setCheck2] = React.useState(true);
-  const [check3, setCheck3] = React.useState(true);
-  const [check4, setCheck4] = React.useState(true);
+  const [check1, setCheck1] = React.useState(
+    checked1 === quiz.check1 ? true : false
+  );
+  const [check2, setCheck2] = React.useState(
+    checked2 === quiz.check2 ? true : false
+  );
+  const [check3, setCheck3] = React.useState(
+    checked3 === quiz.check3 ? true : false
+  );
+  const [check4, setCheck4] = React.useState(
+    checked4 === quiz.check4 ? true : false
+  );
+
+  const btnclick1 = (value) => {
+    setChecked1(!value);
+    !value === quiz.check1 ? setCheck1(true) : setCheck1(false);
+  };
+  const btnclick2 = (value) => {
+    setChecked2(!value);
+    !value === quiz.check2 ? setCheck2(true) : setCheck2(false);
+  };
+  const btnclick3 = (value) => {
+    setChecked3(!value);
+    !value === quiz.check3 ? setCheck3(true) : setCheck3(false);
+  };
+  const btnclick4 = (value) => {
+    setChecked4(!value);
+    !value === quiz.check4 ? setCheck4(true) : setCheck4(false);
+  };
 
   const handleChange1 = (e) => {
     setChecked1(e.target.checked);
+
     e.target.checked === quiz.check1 ? setCheck1(true) : setCheck1(false);
   };
   const handleChange2 = (e) => {
@@ -89,46 +152,102 @@ export default function Checkboxes({ quiz }) {
         : alert("오답입니다 :<")
       : alert("오답입니다 :<");
   };
-
   return (
-    <form>
-      <div>
-        <Checkbox checked={checked1} onChange={handleChange1} name="checked1" />
-        <TextField
+    <form noValidate autoComplete="off">
+      <div className={classes.styleCheck} style={styleCheck}>
+        <Checkbox
+          icon={
+            <RadioButtonUncheckedIcon
+              style={{ color: "white", fontSize: "30px" }}
+            />
+          }
+          checkedIcon={
+            <Brightness1Icon style={{ color: "white", fontSize: "30px" }} />
+          }
+          checked={checked1}
+          onChange={handleChange1}
+          name="checked1"
+          style={checkStyle}
+        />
+        <input
           className={classes.style1}
+          onClick={() => btnclick1(checked1)}
           id="outlined-basic"
           variant="outlined"
           value={quiz && quiz.select1 ? quiz.select1 : ""}
+          readOnly
+          onfocus="this.blur()"
         />
       </div>
-
-      <div>
-        <Checkbox checked={checked2} onChange={handleChange2} name="checked2" />
-        <TextField
+      <div className={classes.styleCheck} style={styleCheck}>
+        <Checkbox
+          icon={<StarBorderIcon style={{ color: "white", fontSize: "32px" }} />}
+          checkedIcon={
+            <StarIcon style={{ color: "white", fontSize: "32px" }} />
+          }
+          checked={checked2}
+          onChange={handleChange2}
+          name="checked2"
+          style={checkStyle}
+        />
+        <input
           className={classes.style2}
+          onClick={() => btnclick2(checked2)}
           id="outlined-basic"
           variant="outlined"
           value={quiz && quiz.select2 ? quiz.select2 : ""}
+          readOnly
+          onfocus="this.blur()"
         />
       </div>
-
-      <div>
-        <Checkbox checked={checked3} onChange={handleChange3} name="checked3" />
-        <TextField
+      <div className={classes.styleCheck} style={styleCheck}>
+        <Checkbox
+          icon={
+            <FavoriteBorderIcon style={{ color: "white", fontSize: "30px" }} />
+          }
+          checkedIcon={
+            <FavoriteIcon style={{ color: "white", fontSize: "30px" }} />
+          }
+          checked={checked3}
+          onChange={handleChange3}
+          name="checked3"
+          style={checkStyle}
+        />
+        <input
           className={classes.style3}
+          onClick={() => btnclick3(checked3)}
           id="outlined-basic"
           variant="outlined"
           value={quiz && quiz.select3 ? quiz.select3 : ""}
+          readOnly
+          onfocus="this.blur()"
         />
       </div>
-
-      <div>
-        <Checkbox checked={checked4} onChange={handleChange4} name="checked4" />
-        <TextField
+      <div className={classes.styleCheck} style={styleCheck}>
+        <Checkbox
+          icon={
+            <CheckBoxOutlineBlankIcon
+              style={{ color: "white", fontSize: "30px" }}
+            />
+          }
+          checkedIcon={
+            <IndeterminateCheckBoxIcon
+              style={{ color: "white", fontSize: "30px" }}
+            />
+          }
+          checked={checked4}
+          onChange={handleChange4}
+          name="checked4"
+          style={checkStyle}
+        />
+        <input
           className={classes.style4}
+          onClick={() => btnclick4(checked4)}
           id="outlined-basic"
           variant="outlined"
           value={quiz && quiz.select4 ? quiz.select4 : ""}
+          readOnly
+          onfocus="this.blur()"
         />
       </div>
       <div>

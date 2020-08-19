@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import QuizlistContainer from "./Container/QuizlistContainer";
 import QuizdetailContainer from "./Container/QuizdetailContainer";
-import QuizStartContainer from "./Container/QuizStartContainer";
+//import QuizStartContainer from "./Container/QuizStartContainer";
+import Quizstart from "./View/Quizstart";
 import Nav from "./Material/Nav";
 import "./App.scss";
 import styled from "styled-components";
@@ -28,6 +29,7 @@ class App extends Component {
     };
 
     const gamestart = this.props.QuizStore.getgamestart;
+    const quiz = this.props.QuizStore.getselectquiz;
 
     return (
       <Wrap style={tempStyle} className={"navStyle"}>
@@ -40,7 +42,7 @@ class App extends Component {
                 <QuizlistContainer />
               </Grid.Column>
               <Grid.Column width={12}>
-                <QuizStartContainer />
+                <Quizstart quiz={quiz} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
