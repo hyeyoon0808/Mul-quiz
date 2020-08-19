@@ -19,8 +19,6 @@ export default function UploadButtons({quiz,setQuiz}) {
   const [visible, setVisible] = React.useState(false); 
 
   const big = {
-    marginTop:'20px',
-    marginLeft:'25px',
     marginBottom:'25px',
     borderRadius:'100%',
     width:'70px',
