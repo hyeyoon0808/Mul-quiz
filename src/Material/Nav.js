@@ -13,19 +13,24 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import { green,} from '@material-ui/core/colors';
+import { Link } from 'react-router-dom';
+import mainLogo from './mainLogo.png'
 
 const Nav = styled.div`
     .MuiToolbar-root{
-        height:80px;
+        height:90px;
     }
+    .exitColor{color:#fff;}
 `
 const margin = {
-  marginRight:"10px",
+  marginRight:"15px",
+  padding:"10px 25px",
+  fontSize:"16px",
   color:"#fff",
   fontWeight:"bold"
 }
 const svg ={
-  fontSize:"2rem"
+  fontSize:"3rem"
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -164,7 +169,7 @@ export default function PrimarySearchAppBar({gamestart,start}) {
             <MenuIcon style={svg} />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Myungho
+            <Link to="/" className="mainLink"><img src={mainLogo} alt={"mainLogo"} className={"logoImg"}/></Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -184,7 +189,9 @@ export default function PrimarySearchAppBar({gamestart,start}) {
 
           {gamestart === false ?
               <>
-                <Button variant="contained" color="secondary"  style={margin}>Exit</Button>
+                <Button variant="contained" color="secondary"  style={margin}>
+                  <Link to ="/" className={"exitColor"} >Exit</Link>
+                </Button>
                 <ThemeProvider theme={theme} >
                 <Button variant="contained" color="primary" className={classes.margin} style={margin} onClick={()=>start(true)}>
                   Done
