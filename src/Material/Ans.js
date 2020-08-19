@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     float: "left",
     width: "50%",
     position: "relative",
+
     border: "none",
     height: "120px",
     fontSize: "20px",
@@ -34,21 +35,39 @@ const useStyles = makeStyles((theme) => ({
     background: "#e0102f",
     borderRadius: "10px",
     color: "white",
+    transition: "all 0.5s ease-in-out",
+    "&:focus": {
+      background: "#ff8080",
+      color: "black",
+    },
   },
   style2: {
     background: "#1273de",
     borderRadius: "10px",
     color: "white",
+    font: "bold",
+    "&:focus": {
+      background: "#99b3ff",
+      color: "black",
+    },
   },
   style3: {
     background: "#e9ab01",
     borderRadius: "10px",
     color: "white",
+    "&:focus": {
+      background: "#ffe680",
+      color: "black",
+    },
   },
   style4: {
     background: "#049106",
     borderRadius: "10px",
     color: "white",
+    "&:focus": {
+      background: "#bfff80",
+      color: "black",
+    },
   },
 }));
 const inputStyle = {

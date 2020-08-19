@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Grid,Divider ,Form} from 'semantic-ui-react'
-import Sel from "../Material/Sel"
-import Point from "../Material/Point"
-import Time from "../Material/Time"
-
+import { Grid, Divider, Form } from "semantic-ui-react";
+import Sel from "../Material/Sel";
+import Point from "../Material/Point";
+import Time from "../Material/Time";
 class Detailinput extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +24,6 @@ class Detailinput extends Component {
     reader.readAsDataURL(file);
   };
   render() {
-    
     const { quiz, setQuiz } = this.props;
     let profile_preview = null;
     if (this.state.file !== "") {
@@ -41,11 +39,11 @@ class Detailinput extends Component {
     return (
       <Grid columns={2} divided>
         <Grid.Column>
-          <Time quiz={quiz} setQuiz={setQuiz}/>
+          <Time quiz={quiz} setQuiz={setQuiz} />
 
           <Divider />
-          
-          <Point quiz={quiz} setQuiz={setQuiz}/>
+
+          <Point quiz={quiz} setQuiz={setQuiz} />
           <Divider />
 
           <p> Answer Option</p>

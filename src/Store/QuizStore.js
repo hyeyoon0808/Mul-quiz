@@ -1,25 +1,23 @@
 import { observable, computed, action } from "mobx";
 import Quizs from "../Quiz";
 
-
 class QuizStore {
-    
-    @observable quizs=Quizs;
-    @observable selectquiz = Quizs[0];
-    @observable hoverquiz;
-    @observable gamestart = false;
+  @observable quizs = Quizs;
+  @observable selectquiz = Quizs[0];
+  @observable hoverquiz;
+  @observable gamestart = false;
 
-    @observable checked = false;
-    @observable selectedFile = null;
-    
-    //login
-    @observable login = false;
-    @observable user = "test";
-    @observable passwd = "123";
-    @observable error = "";
-    @observable idValue = "";
-    @observable pwValue = "";
-    @observable preventDefault = "";
+  @observable checked = false;
+  @observable selectedFile = null;
+
+  //login
+  @observable login = false;
+  @observable user = "test";
+  @observable passwd = "123";
+  @observable error = "";
+  @observable idValue = "";
+  @observable pwValue = "";
+  @observable preventDefault = "";
 
   @computed
   get getquizs() {
@@ -36,19 +34,18 @@ class QuizStore {
     return this.checked ? this.checked : {};
   }
 
+  @computed
+  get getgamestart() {
+    return this.gamestart ? this.gamestart : false;
+  }
 
-    @computed
-    get getgamestart(){
-        return this.gamestart ? this.gamestart : false
-    }
+  @computed
+  get getlogin() {
+    return this.login ? this.login : false;
+  }
 
-    @computed
-    get getlogin(){
-        return this.login ? this.login : false
-    }
-
-    @action
-    setQuizProps(name, value) {
+  @action
+  setQuizProps(name, value) {
     console.log(name);
     this.selectquiz = {
       ...this.selectquiz,
@@ -57,9 +54,9 @@ class QuizStore {
   }
 
   @action
-    selectQuiz(quiz){
-        this.selectquiz = quiz;
-    }
+  selectQuiz(quiz) {
+    this.selectquiz = quiz;
+  }
 
   @action
   setFileProps(event) {
@@ -92,23 +89,24 @@ class QuizStore {
     );
   }
 
-    @action
-    setstart(value){
-        this.gamestart = value;
+  @action
+  setstart(value) {
+    this.gamestart = value;
+  }
 
-    }
-
-    @action
-    setlogin(value){
-        this.login = value;
-
-    }
-    //로그인
-    @action
-    changeId(value){this.idValue = value}
-    @action
-    changePw(value){this.pwValue = value}
-    
+  @action
+  setlogin(value) {
+    this.login = value;
+  }
+  //로그인
+  @action
+  changeId(value) {
+    this.idValue = value;
+  }
+  @action
+  changePw(value) {
+    this.pwValue = value;
+  }
 }
 
 export default new QuizStore();

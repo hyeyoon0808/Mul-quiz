@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import palette from '../log/palette';
+import logLogo from '../image/logLogo.png'
 
 
 //회원가입 폼
@@ -19,19 +20,28 @@ const AuthTemplateBlock = styled.div`
   align-items: center;
 `;
 
+
 /* 흰색 박스 */
 const WhiteBox = styled.div`
   .logo-area {
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
     font-size:30px;
+    .logoForm{
+      margin:0 auto;
+      width:40%;
+      display:block;
+      .logoImg{
+        width:100%;
+      }
+    }
   }
   box-shadow:2px 2px 10px rgba(0,0,0,0.2);
   padding:50px 30px;
-  width: 500px;
+  width: 550px;
   overflow:hidden;
   background: white;
   border-radius: 10px;
@@ -49,7 +59,7 @@ const AuthFormBlock = styled.div`
    font-weight:bold;
    color:#1e70bf;
    font-size:20px;
-   margin:20px 0 10px;
+   margin:20px 0 15px;
    display:block;
  }
 `;
@@ -115,7 +125,9 @@ class registerPage extends Component {
             <AuthTemplateBlock>
                 <WhiteBox>
                     <div className="logo-area">
-                        <Link to="/">딸기조아</Link>
+                      <Link to="/" className={"logoForm"}>
+                          <img src={logLogo} alt={"loginLogo"} className={"logoImg"}/>
+                        </Link>
                     </div>
                     <AuthFormBlock>
                         <h3>회원가입</h3>

@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import styled from 'styled-components'
 import classNames from 'classnames'
 import { Button } from 'semantic-ui-react'
-import image from './gameImg.jpg';
+import image from '../image/gameImg.jpg';
 import { Link } from 'react-router-dom';
 
 const Contents = styled.div`
