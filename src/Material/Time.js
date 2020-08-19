@@ -29,12 +29,11 @@ export default function UploadButtons({quiz,setQuiz}) {
 
   const small = {
     position:"absolute",
-    top:'-3px',
-    left : '57px',
+    top:'-7%',
+    left : '44%',
     borderRadius:'100%',
     width:'35px',
     height: '35px',
-
   }
 
   const small1 = {
@@ -69,8 +68,8 @@ export default function UploadButtons({quiz,setQuiz}) {
 
   const small4 = {
     position:"absolute",
-    top:"107px",
-    left : '55px',
+    top:"26%",
+    left : '43%',
     borderRadius:'100%',
     width:'35px',
     height: '35px',
