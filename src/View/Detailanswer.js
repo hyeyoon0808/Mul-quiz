@@ -5,7 +5,7 @@ import { Switch, OutlinedInput, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Ans from "../Material/Ans";
 
-class Detailanswer extends Component {
+class QuizstartAnswer extends Component {
   render() {
     const { quiz, setQuiz } = this.props;
 
@@ -13,4 +13,4 @@ class Detailanswer extends Component {
   }
 }
 
-export default Detailanswer;
+export default QuizstartAnswer;

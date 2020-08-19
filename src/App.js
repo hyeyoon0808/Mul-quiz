@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import QuizlistContainer from "./Container/QuizlistContainer";
 import QuizdetailContainer from "./Container/QuizdetailContainer";
+import QuizStartContainer from "./Container/QuizStartContainer";
 import Nav from "./Material/Nav";
 import "./App.scss";
 import styled from "styled-components";
@@ -39,7 +40,7 @@ class App extends Component {
                 <QuizlistContainer />
               </Grid.Column>
               <Grid.Column width={12}>
-                {/* <QuizdetailContainer /> */}
+                <QuizStartContainer />
               </Grid.Column>
             </Grid.Row>
           </Grid>
