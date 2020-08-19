@@ -2,15 +2,30 @@ import React, { Component } from "react";
 import { Header, Image, Segment } from "semantic-ui-react";
 import UserAns from "../Material/UserAns";
 import { Hidden } from "@material-ui/core";
+import ReactTimeout from "react-timeout";
 
 class Quizstart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false,
+    };
+    this.toggle = this.toggle.bind(this);
+  }
+  toggle = () => {
+    this.setState({ on: !this.state.on });
+  };
+  handleClick = (value, e) => {
+    setTimeout(this.toggle, value * 1000);
+    console.log(value);
+  };
+
   render() {
     const { quiz, setQuiz } = this.props;
 
     const imgForm = {
       width: "100%",
       overflow: " hidden",
-      padding:"50px 0"
     };
     const imgcenterBox = {
       width: "50%",
@@ -27,25 +42,54 @@ class Quizstart extends Component {
       margin: "0 auto",
       backgroundSize: "cover",
     };
-    const textForm={marginTop:"20px"}
+
     const styleHeader = {
       width: "100%",
       lineHeight: "80px",
     };
+
+    const time = {
+      width: "50px",
+      height: "50px",
+      borderRadius: "100%",
+      background: "green",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    };
+
     return (
       <div>
-        <Segment style={textForm}>
+        <Segment>
           <Header as="h1" textAlign="center" style={styleHeader}>
             {quiz.title}
           </Header>
         </Segment>
-
-        <div style={imgForm}>
-          <div style={imgcenterBox}>
-            <Image src={quiz.imgUrl} style={quizImg} />
+        <div
+          style={{
+            backgroundColor: this.state.on ? alert("시간 초과입니다.") : {},
+          }}
+        >
+          <button onClick={() => this.handleClick(quiz.time)}>start</button>
+        </div>
+        <div>
+          <div>
+            <div style={time}>
+              <h1>{quiz.time}</h1>
+            </div>
+          </div>
+          <div>
+            <div style={imgForm}>
+              <div style={imgcenterBox}>
+                <Image src={quiz.imgUrl} style={quizImg} />
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>Your POINT</p>
+            {quiz.point}
           </div>
         </div>
-
         <div>
           <UserAns quiz={quiz} setQuiz={setQuiz} />
         </div>

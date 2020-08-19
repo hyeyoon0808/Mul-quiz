@@ -3,6 +3,25 @@ import { Grid, Divider, Form } from "semantic-ui-react";
 import Sel from "../Material/Sel";
 import Point from "../Material/Point";
 import Time from "../Material/Time";
+import styled from "styled-components";
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const InputForm = styled.div`
+  .gridForm{position:relative;}
+  .profileBox{
+    margin:20px auto;
+    width:75%;
+    height:300px;
+    border:2px dotted #d9d9d9;
+  }
+  .pointForm>div:nth-of-type(1){
+    width:90%;
+    margin:0 auto;
+  }
+`
+
+
 class Detailinput extends Component {
   constructor(props) {
     super(props);
@@ -36,34 +55,50 @@ class Detailinput extends Component {
         />
       );
     }
+    const centerForm={
+      position:"absolute",
+      top:"50%",
+      left:"50%",
+      transform:"translate(-50%,-50%)",
+      boxShadow:"none",
+      border:"1px solid #d9d9d9"
+    }
+    const leftForm = {width:"20%",textAlign:"center"}
     return (
-      <Grid columns={2} divided>
-        <Grid.Column>
-          <Time quiz={quiz} setQuiz={setQuiz} />
+      <InputForm>
+        <Grid columns={2} divided className="gridForm">
+          <Grid.Column style={leftForm}>
+            <Time quiz={quiz} setQuiz={setQuiz} />
 
-          <Divider />
-
-          <Point quiz={quiz} setQuiz={setQuiz} />
-          <Divider />
-
-          <p> Answer Option</p>
-          <Sel quiz={quiz} />
-        </Grid.Column>
-
-        <Grid.Column>
-          <Form>
-            <Form.Input
-              type="file"
-              name="imgFile"
-              id="imgFile"
-              onChange={this.handleFileOnChange}
-              //onChange={(e) => setQuiz("imgUrl", e.target.value)}
-            />
-            {profile_preview}
             <Divider />
-          </Form>
-        </Grid.Column>
-      </Grid>
+            <div className="pointForm">
+              <Point quiz={quiz} setQuiz={setQuiz}/>
+            </div>
+            <Divider />
+
+            <p> Answer Option</p>
+            <Sel quiz={quiz} />
+          </Grid.Column>
+
+          <Grid.Column style={centerForm}>
+            <Form>
+              <Form.Input
+                type="file"
+                name="imgFile"
+                id="imgFile"
+                onChange={this.handleFileOnChange}
+              />
+              
+              <div className={"profileBox"}>
+                {profile_preview} 
+              </div>
+             
+            
+            </Form>
+          </Grid.Column>
+        </Grid>
+      </InputForm>
+      
     );
   }
 }
