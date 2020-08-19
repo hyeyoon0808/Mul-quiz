@@ -17,7 +17,6 @@ class QuizlistContainer extends Component {
     }
 
     onAddQuiz = () =>{
-        alert('answer / true or false');
         let quiz = {
         ISBN: generateId(5),
         };

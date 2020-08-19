@@ -5,10 +5,13 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react';
 import QuizStore from "./Store/QuizStore";
 import 'semantic-ui-css/semantic.min.css'
+import {BrowserRouter} from 'react-router-dom';
 
 ReactDOM.render(
   <Provider QuizStore={QuizStore}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
