@@ -1,6 +1,5 @@
 const Quizs = [
   {
-    id: 1,
     ISBN: "9781617293986",
     title: "Spring Microservices in Action",
     author: "John Carnell",
@@ -19,7 +18,6 @@ const Quizs = [
   },
 
   {
-    id: 2,
     ISBN: "9781491954621",
     title: "Learning React",
     author: "Alex Banks , Eve Porcello",

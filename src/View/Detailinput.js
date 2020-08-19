@@ -4,22 +4,22 @@ import Sel from "../Material/Sel";
 import Point from "../Material/Point";
 import Time from "../Material/Time";
 import styled from "styled-components";
+import Upload from "../Material/Upload"
 
 const InputForm = styled.div`
-  .gridForm {
-    position: relative;
+  .gridForm{position:relative;}
+  .profileBox{
+    margin:30px auto;
+    width:75%;
+    height:300px;
+    border:2px dotted #d9d9d9;
   }
-  .profileBox {
-    margin: 30px auto;
-    width: 75%;
-    height: 300px;
-    border: 2px dotted #d9d9d9;
+  .pointForm>div:nth-of-type(1){
+    width:90%;
+    margin:0 auto;
   }
-  .pointForm > div:nth-of-type(1) {
-    width: 90%;
-    margin: 0 auto;
-  }
-`;
+`
+
 
 class Detailinput extends Component {
   constructor(props) {
@@ -54,25 +54,27 @@ class Detailinput extends Component {
         />
       );
     }
-    const centerForm = {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%,-50%)",
-      boxShadow: "2px 2px 8px 2px #ececec",
-      border: "1px solid #d9d9d9",
-      borderRadius: "20px",
-    };
-    const leftForm = { width: "20%", textAlign: "center" };
+    const centerForm={
+      position:"absolute",
+      top:"50%",
+      left:"50%",
+      transform:"translate(-50%,-50%)",
+      boxShadow:"2px 2px 8px 2px #ececec",
+      border:"1px solid #d9d9d9",
+      borderRadius:"20px",
+    }
+    const leftForm = {width:"20%",textAlign:"center"}
     return (
       <InputForm>
         <Grid columns={2} divided className="gridForm">
           <Grid.Column style={leftForm}>
-            <Time quiz={quiz} setQuiz={setQuiz} />
 
+            <div className="TimeForm">
+            <Time quiz={quiz} setQuiz={setQuiz} />
+            </div>
             <Divider />
             <div className="pointForm">
-              <Point quiz={quiz} setQuiz={setQuiz} />
+              <Point quiz={quiz} setQuiz={setQuiz}/>
             </div>
             <Divider />
 
@@ -82,18 +84,12 @@ class Detailinput extends Component {
 
           <Grid.Column style={centerForm}>
             <Form>
-              <Form.Input
-                type="file"
-                name="imgFile"
-                id="imgFile"
-                onChange={this.handleFileOnChange}
-              />
-
-              <div className={"profileBox"}>{profile_preview}</div>
+              <Upload/>
             </Form>
           </Grid.Column>
         </Grid>
       </InputForm>
+      
     );
   }
 }

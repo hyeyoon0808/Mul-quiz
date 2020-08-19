@@ -6,6 +6,8 @@ import DetailanswerContainer from "../Container/DetailanswerContainer";
 import styled from "styled-components";
 
 const QuizInputForm = styled.div`
+
+  background:#eff2eb;
   .rowForm{position:relative; margin:70px 0;}
   .rowForm>div:nth-of-type(1){
     width:94%;

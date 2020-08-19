@@ -21,89 +21,84 @@ export default function UploadButtons({quiz,setQuiz}) {
   const big = {
     marginBottom:'25px',
     borderRadius:'100%',
-    width:'70px',
-    height: '70px',
+    width:'90px',
+    height: '90px',
 
-    background: visible ? '#4f018b' : '#c8c8c8' 
+    background: visible ? '#4f018b' : 'white',
+    border:'0',
+    boxShadow:'0px 1px 1px 0px black',
   }
 
   const small = {
-    position:"absolute",
-    top:'-3px',
-    left : '57px',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
-
+    width:'45px',
+    height: '45px',
+    top:'-12%',
+    left:'42%',
   }
 
   const small1 = {
-    position:"absolute",
-    top:'12px',
-    left : '100px',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
-    
+    width:'45px',
+    height: '45px',
+    top:'-5%',
+    left:'64%',
   }
 
   const small2 = {
-    position:"absolute",
-    top: '50px',
-    left : '113px',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
-    
+    width:'45px',
+    height: '45px',
+    top:'10%',
+    left:'71%',
   }
 
   const small3 = {
-    position:"absolute",
-    top:'90px',
-    left : '100px',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
-   
+    width:'45px',
+    height: '45px',
+    left:'64%',
+    top:'25%'
   }
 
   const small4 = {
-    position:"absolute",
-    top:"107px",
-    left : '55px',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
+    width:'45px',
+    height: '45px',
+    left:'42%',
+    top:'33%',
   }
 
   const small5 = {
-    position:"absolute",
-    top:'90px',
-    left : '13px',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
-    
+    width:'45px',
+    height: '45px',
+    top:'26%',
+    left:'21%',
   }
 
   const small6 = {
-    position:"absolute",
-    top: '50px',
-    left : '0',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
-    
+    width:'45px',
+    height: '45px',
+    top:'10%',
+    left:'12%',
   }
 
   const small7 = {
-    position:"absolute",
-    top:'10px',
-    left : '15px',
+    position:'absolute',
     borderRadius:'100%',
-    width:'35px',
-    height: '35px',
-
+    width:'45px',
+    height: '45px',
+    top:'-6%',
+    left:'21%',
   }
 
   const display=(display,name,value)=>{
@@ -113,7 +108,8 @@ export default function UploadButtons({quiz,setQuiz}) {
 
   return (
     <ButtonBox>
-        <button  style={big} onClick={()=>display(visible)}>
+        <button  style={big} onClick={()=>display(visible)
+        } >
           <div>{quiz.time}<p>Sec</p></div>
         </button>
 
