@@ -6,6 +6,7 @@ import Nav from '../Material/Nav';
 import './QuizPage.scss';
 import styled from 'styled-components';
 import {inject,observer} from "mobx-react";
+import Quizstart from "../View/Quizstart";
 
 const Wrap = styled.div``;
 
@@ -36,6 +37,7 @@ start = (value) =>{
     }
 
     const gamestart = this.props.QuizStore.getgamestart;
+    const quiz = this.props.QuizStore.getselectquiz;
 
     return (
       <Wrap style={tempStyle} className={"navStyle"} >
@@ -45,11 +47,11 @@ start = (value) =>{
           (
             <Grid columns={2} divided  style={marginRemove} >
             <Grid.Row  style={tempStyle} >
-            <Grid.Column width={2} style={tempStyle} >
+            <Grid.Column  style={leftStyle} >
               <QuizlistContainer />
             </Grid.Column>
-            <Grid.Column width={13}>
-              {/* <QuizdetailContainer /> */}
+            <Grid.Column style={rightStyle} >
+              <Quizstart quiz={quiz} />
             </Grid.Column>
             </Grid.Row>
             </Grid>
