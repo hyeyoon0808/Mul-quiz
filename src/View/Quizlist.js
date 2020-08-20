@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Quizitem from "./Quizitem";
 import { ItemGroup } from "semantic-ui-react";
-import { Button } from "semantic-ui-react";
 import styled from "styled-components";
 import Add from "../Material/Add";
 import Import from "../Material/Import";
@@ -14,8 +13,10 @@ const MapList = styled.div`
     display: block;
     margin: 0 auto;
   }
-  .import>button{margin-top:100px;}
-`
+  .import > button {
+    margin-top: 100px;
+  }
+`;
 
 class Quizlist extends Component {
   render() {
@@ -46,12 +47,11 @@ class Quizlist extends Component {
       <MapList>
         <ItemGroup>{quizlist}</ItemGroup>
 
-        <Add onAddQuiz={onAddQuiz}/>
-          
-        <div className={"import"}>
-          <Import/>
-        </div>
+        <Add onAddQuiz={onAddQuiz} />
 
+        <div className={"import"}>
+          <Import />
+        </div>
       </MapList>
     );
   }

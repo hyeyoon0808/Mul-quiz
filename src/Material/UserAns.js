@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#e0102f",
     borderRadius: "10px",
     color: "white",
+    fontWeight: "bold",
     "&:focus": {
       outline: "none",
       transform: "scale(1.04)",
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#1273de",
     borderRadius: "10px",
     color: "white",
+    fontWeight: "bold",
     "&:focus": {
       outline: "none",
       transform: "scale(1.04)",
@@ -54,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#e9ab01",
     borderRadius: "10px",
     color: "white",
+    fontWeight: "bold",
     "&:focus": {
       outline: "none",
       transform: "scale(1.04)",
@@ -63,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#049106",
     borderRadius: "10px",
     color: "white",
+    fontWeight: "bold",
     "&:focus": {
       outline: "none",
       transform: "scale(1.04)",
@@ -90,13 +94,13 @@ const styleCheck = {
   borderRadius: "10px",
 };
 const saveBtn = {
-  position:"absolute",
-  bottom:"32%",
-  right:"2%",
-  width:"200px",
-  height:"50px",
-  fontSize:"18px"
-}
+  position: "absolute",
+  bottom: "32%",
+  right: "2%",
+  width: "200px",
+  height: "50px",
+  fontSize: "18px",
+};
 
 export default function Checkboxes({ quiz }) {
   const classes = useStyles();
@@ -171,7 +175,7 @@ export default function Checkboxes({ quiz }) {
       : alert("오답입니다 :<");
   };
   return (
-    <form noValidate autoComplete="off" >
+    <form noValidate autoComplete="off">
       <div className={classes.styleCheck} style={styleCheck}>
         <Checkbox
           icon={
@@ -273,7 +277,12 @@ export default function Checkboxes({ quiz }) {
         />
       </div>
       <div>
-        <Button variant="contained" color="secondary" onClick={handleCorrect} style={saveBtn}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={handleCorrect}
+          style={saveBtn}
+        >
           Submit
         </Button>
       </div>
