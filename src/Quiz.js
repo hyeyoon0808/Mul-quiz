@@ -1,5 +1,6 @@
 const Quizs = [
   {
+    ISBN:"12345",
     title: "세상에서 가장 쉬운 숫자는?",
     imgUrl: "quiz_images/image.jpg",
     select1: "일이구먼",
@@ -13,6 +14,7 @@ const Quizs = [
   },
 
   {
+    ISBN:"12346",
     title: "Learning React",
     imgUrl: "book_images/react.jpg",
     select1: "",

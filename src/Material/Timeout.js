@@ -8,8 +8,8 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 60 + rand();
+  const left = 40 + rand();
 
   return {
     top: `${top}%`,
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    textAlign:'center',
   },
 }));
 
@@ -80,6 +81,7 @@ export default function SimpleModal({quiz}) {
           Start Quiz Modal
         </button>
       </p>
+      
       <Modal
         open={open}
         onClose={handleClose}
@@ -88,8 +90,7 @@ export default function SimpleModal({quiz}) {
       >
         {body}
       </Modal>
-
-      <Countdown
+      {open? <div></div>:<Countdown
           date={Date.now() + Number(time)*1000}
           intervalDelay={0}
           precision={3}
@@ -97,7 +98,8 @@ export default function SimpleModal({quiz}) {
             props => <div style={count}>{props.total/1000}</div>
           }
           onComplete={handleClose}
-        />
+        /> }
+      
     </div>
   );
 }

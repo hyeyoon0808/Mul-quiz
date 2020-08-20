@@ -73,6 +73,7 @@ class QuizStore {
   @action
   Remove(ISBN) {
     this.quizs = this.quizs.filter((quiz) => quiz.ISBN !== ISBN);
+    this.selectquiz = Quizs[0];
   }
 
   @action
