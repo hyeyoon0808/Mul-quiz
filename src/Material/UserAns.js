@@ -96,7 +96,14 @@ export default function Checkboxes({ quiz }) {
   const [checked2, setChecked2] = React.useState(false);
   const [checked3, setChecked3] = React.useState(false);
   const [checked4, setChecked4] = React.useState(false);
+  const [on, setOn] = React.useState(false);
 
+  const handleOn = () => {
+    setOn(true);
+  };
+  const handleOff = () => {
+    setOn(false);
+  };
   const [check1, setCheck1] = React.useState(
     checked1 === quiz.check1 ? true : false
   );
@@ -144,13 +151,12 @@ export default function Checkboxes({ quiz }) {
     setChecked4(e.target.checked);
     e.target.checked === quiz.check4 ? setCheck4(true) : setCheck4(false);
   };
-
   const handleCorrect = () => {
     check1 && true
       ? check2 && true
         ? check3 && true
           ? check4 && true
-            ? alert("정답입니다 :)")
+            ? alert("정답입니다 :<")
             : alert("오답입니다 :<")
           : alert("오답입니다 :<")
         : alert("오답입니다 :<")
@@ -158,6 +164,28 @@ export default function Checkboxes({ quiz }) {
   };
   return (
     <form noValidate autoComplete="off">
+      <div class="ui basic modal">
+        <div class="ui icon header">
+          <i class="archive icon"></i>
+          Archive Old Messages
+        </div>
+        <div class="content">
+          <p>
+            Your inbox is getting full, would you like us to enable automatic
+            archiving of old messages?
+          </p>
+        </div>
+        <div class="actions">
+          <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            No
+          </div>
+          <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>
+            Yes
+          </div>
+        </div>
+      </div>
       <div className={classes.styleCheck} style={styleCheck}>
         <Checkbox
           icon={
@@ -260,7 +288,7 @@ export default function Checkboxes({ quiz }) {
       </div>
       <div>
         <Button variant="contained" color="secondary" onClick={handleCorrect}>
-          Save
+          Submit
         </Button>
       </div>
     </form>

@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     color: "white",
     transition: "all 0.5s ease-in-out",
+    fontWeight: "bold",
     "&:focus": {
       background: "#ff8080",
       color: "black",
@@ -45,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#1273de",
     borderRadius: "10px",
     color: "white",
-    font: "bold",
+    fontWeight: "bold",
+    transition: "all 0.5s ease-in-out",
     "&:focus": {
       background: "#99b3ff",
       color: "black",
@@ -55,6 +57,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#e9ab01",
     borderRadius: "10px",
     color: "white",
+    fontWeight: "bold",
+    transition: "all 0.5s ease-in-out",
     "&:focus": {
       background: "#ffe680",
       color: "black",
@@ -64,6 +68,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#049106",
     borderRadius: "10px",
     color: "white",
+    fontWeight: "bold",
+    transition: "all 0.5s ease-in-out",
     "&:focus": {
       background: "#bfff80",
       color: "black",
@@ -115,7 +121,7 @@ export default function BasicTextFields({ quiz, setQuiz }) {
           className={classes.style1}
           id="outlined-basic"
           label="Option1"
-          placeholder="Tell us more"
+          placeholder="Option1"
           //style={style1}
           value={quiz && quiz.select1 ? quiz.select1 : ""}
           onChange={(e) => setQuiz("select1", e.target.value)}
@@ -138,7 +144,7 @@ export default function BasicTextFields({ quiz, setQuiz }) {
           className={classes.style2}
           id="outlined-basic"
           label="Option2"
-          placeholder="Tell us more"
+          placeholder="Option2"
           //style={style2}
           value={quiz && quiz.select2 ? quiz.select2 : ""}
           onChange={(e) => setQuiz("select2", e.target.value)}
@@ -163,7 +169,7 @@ export default function BasicTextFields({ quiz, setQuiz }) {
           className={classes.style3}
           id="outlined-basic"
           label="Option3"
-          placeholder="Tell us more"
+          placeholder="Option3"
           value={quiz && quiz.select3 ? quiz.select3 : ""}
           onChange={(e) => setQuiz("select3", e.target.value)}
           style={inputStyle}
@@ -191,7 +197,7 @@ export default function BasicTextFields({ quiz, setQuiz }) {
           className={classes.style4}
           id="outlined-basic"
           label="Option4"
-          placeholder="Tell us more"
+          placeholder="Option4"
           //style={style4}
           value={quiz && quiz.select4 ? quiz.select4 : ""}
           onChange={(e) => setQuiz("select4", e.target.value)}
