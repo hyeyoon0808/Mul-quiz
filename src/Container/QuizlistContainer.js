@@ -19,6 +19,10 @@ class QuizlistContainer extends Component {
     onAddQuiz = () =>{
         let quiz = {
         ISBN: generateId(5),
+        check1:false,
+        check2:false,
+        check3:false,
+        check4:false,
         };
         this.props.QuizStore.addQuiz(quiz);
     }

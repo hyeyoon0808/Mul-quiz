@@ -164,6 +164,9 @@ export default function Checkboxes({ quiz }) {
     e.target.checked === quiz.check4 ? setCheck4(true) : setCheck4(false);
   };
   const handleCorrect = () => {
+    console.log(quiz);
+
+
     check1 && true
       ? check2 && true
         ? check3 && true
