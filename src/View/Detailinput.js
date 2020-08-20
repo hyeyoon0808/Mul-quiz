@@ -12,7 +12,8 @@ const InputForm = styled.div`
     margin:30px auto;
     width:75%;
     height:300px;
-    border:2px dotted #d9d9d9;
+    border:3px dotted #adadad;
+    display:flex;
   }
   .pointForm>div:nth-of-type(1){
     width:90%;
@@ -60,10 +61,15 @@ class Detailinput extends Component {
       left:"50%",
       transform:"translate(-50%,-50%)",
       boxShadow:"2px 2px 8px 2px #ececec",
-      border:"1px solid #d9d9d9",
+      border:"4px solid #d9d9d9",
       borderRadius:"20px",
     }
     const leftForm = {width:"20%",textAlign:"center"}
+    const optionFont = {
+      fontWeight:'bold',
+      fontSize:"16px",
+      color:"#666",
+    }
     return (
       <InputForm>
         <Grid columns={2} divided className="gridForm">
@@ -78,7 +84,7 @@ class Detailinput extends Component {
             </div>
             <Divider />
 
-            <p> Answer Option</p>
+            <p style={optionFont}> Answer Option</p>
             <Sel quiz={quiz} />
           </Grid.Column>
 

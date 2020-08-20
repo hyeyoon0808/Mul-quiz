@@ -33,7 +33,8 @@ start = (value) =>{
         height:"100%"
     }
     const rightStyle ={
-        width:"85%"
+        width:"85%",
+        background:"#eff2eb"
     }
 
     const gamestart = this.props.QuizStore.getgamestart;

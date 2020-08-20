@@ -89,6 +89,14 @@ const checkStyle = {
 const styleCheck = {
   borderRadius: "10px",
 };
+const saveBtn = {
+  position:"absolute",
+  bottom:"32%",
+  right:"2%",
+  width:"200px",
+  height:"50px",
+  fontSize:"18px"
+}
 
 export default function Checkboxes({ quiz }) {
   const classes = useStyles();
@@ -163,29 +171,7 @@ export default function Checkboxes({ quiz }) {
       : alert("오답입니다 :<");
   };
   return (
-    <form noValidate autoComplete="off">
-      <div class="ui basic modal">
-        <div class="ui icon header">
-          <i class="archive icon"></i>
-          Archive Old Messages
-        </div>
-        <div class="content">
-          <p>
-            Your inbox is getting full, would you like us to enable automatic
-            archiving of old messages?
-          </p>
-        </div>
-        <div class="actions">
-          <div class="ui red basic cancel inverted button">
-            <i class="remove icon"></i>
-            No
-          </div>
-          <div class="ui green ok inverted button">
-            <i class="checkmark icon"></i>
-            Yes
-          </div>
-        </div>
-      </div>
+    <form noValidate autoComplete="off" >
       <div className={classes.styleCheck} style={styleCheck}>
         <Checkbox
           icon={
@@ -287,7 +273,7 @@ export default function Checkboxes({ quiz }) {
         />
       </div>
       <div>
-        <Button variant="contained" color="secondary" onClick={handleCorrect}>
+        <Button variant="contained" color="secondary" onClick={handleCorrect} style={saveBtn}>
           Submit
         </Button>
       </div>

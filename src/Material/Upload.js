@@ -14,6 +14,12 @@ const useStyles = makeStyles((theme) => ({
   input: {
     display: 'none',
   },
+  btnForm:{
+    width:"75%",
+    margin:"0 auto",
+    display:"flex",
+    justifyContent:"space-evenly"
+  }
 }));
 
 
@@ -29,10 +35,9 @@ export default function UploadButtons() {
           className="profile_preview"
           src={previewURL}
           alt="profile"
-          width="400px"
+          width="100%"
         />
       );
-      console.log('aa');
     }
     
 
@@ -55,23 +60,25 @@ export default function UploadButtons() {
       <div className={"profileBox"}>
           {profile_preview} 
       </div>
-      <Button>Image Library</Button>
+      <div className={classes.btnForm}>
+        <Button>Image Library</Button>
 
-      <input
-        accept="image/*"
-        className={classes.input}
-        id="contained-button-file"
-        multiple
-        type="file"
-        onChange={handleFileOnChange}
-      />
-      <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span">
-          Upload image
-        </Button>
-      </label>
+        <input
+          accept="image/*"
+          className={classes.input}
+          id="contained-button-file"
+          multiple
+          type="file"
+          onChange={handleFileOnChange}
+        />
+        <label htmlFor="contained-button-file">
+          <Button variant="contained" color="primary" component="span">
+            Upload image
+          </Button>
+        </label>
 
-      <Button>Youtube Link</Button>
+        <Button>Youtube Link</Button>
+      </div>
     </div>
   );
 }

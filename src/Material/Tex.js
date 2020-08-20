@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiInputBase-root': {
       height: '120px',
       fontSize: '2em',
-      textAlign: 'center'
+      textAlign: 'center',
+      borderRadius:"20px"
     },
     '& .MuiInputBase-input': {
       

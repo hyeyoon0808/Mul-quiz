@@ -57,11 +57,29 @@ export default function SimpleModal({quiz}) {
     </div>
   );
 
+  const timeBtn = {
+    width:"200px",
+    height:"60px",
+    border:"none",
+    background:"#3f51b5",
+    borderRadius:"10px",
+    color:"#fff",
+    fontSize:"20px",
+  }
+  const count = {
+    marginTop:"20px",
+    color:" rgb(76, 175, 80)",
+    fontWeight:" bold",
+    fontSize:" 30px",
+  }
+
   return (
     <div>
-      <button type="button" onClick={()=>handleClick(quiz.time)}>
-        Start Quiz Modal
-      </button>
+      <p>
+        <button type="button" onClick={()=>handleClick(quiz.time)} style={timeBtn}>
+          Start Quiz Modal
+        </button>
+      </p>
       <Modal
         open={open}
         onClose={handleClose}
@@ -76,7 +94,7 @@ export default function SimpleModal({quiz}) {
           intervalDelay={0}
           precision={3}
           renderer={
-            props => <div>{props.total/1000}</div>
+            props => <div style={count}>{props.total/1000}</div>
           }
           onComplete={handleClose}
         />

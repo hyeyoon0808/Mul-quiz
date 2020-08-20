@@ -19,7 +19,6 @@ const MapList = styled.div`
 
 class Quizlist extends Component {
   render() {
-    const arr = [1, 2, 3, 4, 5];
     const {
       quizs,
       onRemove,
@@ -47,16 +46,12 @@ class Quizlist extends Component {
       <MapList>
         <ItemGroup>{quizlist}</ItemGroup>
 
-<<<<<<< Updated upstream
         <Add onAddQuiz={onAddQuiz}/>
           
         <div className={"import"}>
           <Import/>
         </div>
 
-=======
-        <Add onAddQuiz={onAddQuiz} />
->>>>>>> Stashed changes
       </MapList>
     );
   }

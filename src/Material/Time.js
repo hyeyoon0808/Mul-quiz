@@ -10,6 +10,7 @@ const ButtonBox = styled.div`
   .hover{
     &:hover{
       background:#4f018b;
+      color:#fff;
     }
   }
 `
@@ -23,10 +24,14 @@ export default function UploadButtons({quiz,setQuiz}) {
     borderRadius:'100%',
     width:'90px',
     height: '90px',
+    fontWeight:'bold',
+    fontSize:"16px",
 
     background: visible ? '#4f018b' : 'white',
     border:'0',
     boxShadow:'0px 1px 1px 0px black',
+    color: visible ? '#fff' : "#666",
+    transition:"all 0.5s ease-in-out"
   }
 
   const small = {

@@ -180,11 +180,20 @@ export default function CustomizedSlider({quiz,setQuiz}) {
     setQuiz("point",newValue);
   };
 
-
+  const poinFont = {
+    fontWeight:"bold",
+    fontSize:"16px",
+    color:"#666"
+  }
+  const points = {
+    fontSize: "18px",
+    fontWeight: "bold",
+    color: "#4caf50"
+  }
   return (
     <div className={classes.root}>
       
-      <Typography gutterBottom>Points</Typography>
+      <Typography gutterBottom style={poinFont}>Points</Typography>
       <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" 
       min ={0}
       max={2000}
@@ -193,7 +202,7 @@ export default function CustomizedSlider({quiz,setQuiz}) {
       onChange={handleSliderChange}
        />
       <div className={classes.margin} />
-      <p>{quiz.point}</p>
+      <p style={points}>{quiz.point}</p>
     </div>
     
   );

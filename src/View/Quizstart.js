@@ -4,6 +4,8 @@ import UserAns from "../Material/UserAns";
 import { Hidden } from "@material-ui/core";
 import ReactTimeout from "react-timeout";
 import Timeout from "../Material/Timeout";
+import styled from "styled-components";
+
 
 class Quizstart extends Component {
 
@@ -26,67 +28,100 @@ class Quizstart extends Component {
 
   render() {
     const { quiz, setQuiz } = this.props;
-    
+
+    const middleForm = {
+      margin: "40px 0",
+      overflow:"hidden"
+    }
+
     const imgForm = {
-      width: "100%",
-      overflow: " hidden",
+      width: "50%",
+      display: "flex",
+      boxShadow: "2px 2px 8px 2px #ececec",
+      border: "4px dotted #adadad",
+      borderRadius: "20px",
+      padding: "20px",
+      float: "left"
     };
     const imgcenterBox = {
-      width: "50%",
-      height: "300px",
-      margin: "0 auto",
+      width: "100%",
+      height: "400px",
       overflow: "hidden",
-      border: "1px solid #000",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      borderRadius: "20px",
     };
     const quizImg = {
       width: "100%",
       margin: "0 auto",
       backgroundSize: "cover",
     };
-
+    const doneHeader = {
+      height: "120px",
+      boxSizing: "borderBox",
+      display: "flex",
+      alignItems: "center",
+      margin: "30px 0",
+      borderRadius: "20px"
+    }
     const styleHeader = {
       width: "100%",
-      lineHeight: "80px",
     };
-
-    const time = {
-      width: "50px",
-      height: "50px",
-      borderRadius: "100%",
-      background: "green",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    };
-  
-
+    const myGrid = {
+      width: "25%",
+      height:"448px",
+      float: "left",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center"
+    }
+    const myForm = {
+      textAlign:"center",
+      
+    }
+    const myPointTxt = {
+      fontSize: "30px",
+      color:"#444"
+    }
+    const myPoint = {
+      color: "#f50057",
+      fontWeight: "bold",
+      fontSize: "20px"
+    }
     return (
       <div>
-        <Segment>
+
+        <Segment style={doneHeader}>
           <Header as="h1" textAlign="center" style={styleHeader}>
             {quiz.title}
           </Header>
-        </Segment>  
-          <Timeout quiz={quiz}/>
+        </Segment>
 
-        <div>
-          <div>
-            <div style={imgForm}>
-              <div style={imgcenterBox}>
-                <Image src={quiz.imgUrl} style={quizImg} />
-              </div>
+        <div style={middleForm}>
+
+        <div style={myGrid}>
+          <div style={myForm}>
+            <Timeout quiz={quiz} />
+          </div>
+        </div>
+          
+
+          <div style={imgForm}>
+            <div style={imgcenterBox}>
+              <Image src={quiz.imgUrl} style={quizImg} />
             </div>
           </div>
-          <div>
-            <p>Your POINT</p>
-            {quiz.point}
+
+          <div style={myGrid}>
+            <div style={myForm}>
+              <p style={myPointTxt}>Your POINT</p>
+              <div style={myPoint}>{quiz.point}</div>
+            </div>
           </div>
         </div>
         <div>
-          <UserAns quiz={quiz} setQuiz={setQuiz} />
+            <UserAns quiz={quiz} setQuiz={setQuiz}/>
         </div>
       </div>
     );
