@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
-import Button from "@material-ui/core/Button";
-
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -27,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     float: "left",
     width: "50%",
     position: "relative",
+
     border: "none",
     height: "120px",
     fontSize: "20px",
@@ -36,18 +35,20 @@ const useStyles = makeStyles((theme) => ({
     background: "#e0102f",
     borderRadius: "10px",
     color: "white",
+    transition: "all 0.5s ease-in-out",
     "&:focus": {
-      outline: "none",
-      transform: "scale(1.04)",
+      background: "#ff8080",
+      color: "black",
     },
   },
   style2: {
     background: "#1273de",
     borderRadius: "10px",
     color: "white",
+    font: "bold",
     "&:focus": {
-      outline: "none",
-      transform: "scale(1.04)",
+      background: "#99b3ff",
+      color: "black",
     },
   },
   style3: {
@@ -55,8 +56,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     color: "white",
     "&:focus": {
-      outline: "none",
-      transform: "scale(1.04)",
+      background: "#ffe680",
+      color: "black",
     },
   },
   style4: {
@@ -64,8 +65,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     color: "white",
     "&:focus": {
-      outline: "none",
-      transform: "scale(1.04)",
+      background: "#bfff80",
+      color: "black",
     },
   },
 }));
@@ -90,72 +91,8 @@ const styleCheck = {
   borderRadius: "10px",
 };
 
-export default function Checkboxes({ quiz }) {
+export default function BasicTextFields({ quiz, setQuiz }) {
   const classes = useStyles();
-  const [checked1, setChecked1] = React.useState(false);
-  const [checked2, setChecked2] = React.useState(false);
-  const [checked3, setChecked3] = React.useState(false);
-  const [checked4, setChecked4] = React.useState(false);
-
-  const [check1, setCheck1] = React.useState(
-    checked1 === quiz.check1 ? true : false
-  );
-  const [check2, setCheck2] = React.useState(
-    checked2 === quiz.check2 ? true : false
-  );
-  const [check3, setCheck3] = React.useState(
-    checked3 === quiz.check3 ? true : false
-  );
-  const [check4, setCheck4] = React.useState(
-    checked4 === quiz.check4 ? true : false
-  );
-
-  const btnclick1 = (value) => {
-    setChecked1(!value);
-    !value === quiz.check1 ? setCheck1(true) : setCheck1(false);
-  };
-  const btnclick2 = (value) => {
-    setChecked2(!value);
-    !value === quiz.check2 ? setCheck2(true) : setCheck2(false);
-  };
-  const btnclick3 = (value) => {
-    setChecked3(!value);
-    !value === quiz.check3 ? setCheck3(true) : setCheck3(false);
-  };
-  const btnclick4 = (value) => {
-    setChecked4(!value);
-    !value === quiz.check4 ? setCheck4(true) : setCheck4(false);
-  };
-
-  const handleChange1 = (e) => {
-    setChecked1(e.target.checked);
-
-    e.target.checked === quiz.check1 ? setCheck1(true) : setCheck1(false);
-  };
-  const handleChange2 = (e) => {
-    setChecked2(e.target.checked);
-    e.target.checked === quiz.check2 ? setCheck2(true) : setCheck2(false);
-  };
-  const handleChange3 = (e) => {
-    setChecked3(e.target.checked);
-    e.target.checked === quiz.check3 ? setCheck3(true) : setCheck3(false);
-  };
-  const handleChange4 = (e) => {
-    setChecked4(e.target.checked);
-    e.target.checked === quiz.check4 ? setCheck4(true) : setCheck4(false);
-  };
-
-  const handleCorrect = () => {
-    check1 && true
-      ? check2 && true
-        ? check3 && true
-          ? check4 && true
-            ? alert("정답입니다 :)")
-            : alert("오답입니다 :<")
-          : alert("오답입니다 :<")
-        : alert("오답입니다 :<")
-      : alert("오답입니다 :<");
-  };
   return (
     <form noValidate autoComplete="off">
       <div className={classes.styleCheck} style={styleCheck}>
@@ -168,45 +105,47 @@ export default function Checkboxes({ quiz }) {
           checkedIcon={
             <Brightness1Icon style={{ color: "white", fontSize: "30px" }} />
           }
-          checked={checked1}
-          onChange={handleChange1}
-          name="checked1"
+          checked={quiz && quiz.check1 ? true : false}
+          onChange={(event) => setQuiz("check1", event.target.checked)}
+          inputProps={{ "aria-label": "primary checkbox" }}
           style={checkStyle}
         />
         <input
+          type="text"
           className={classes.style1}
-          onClick={() => btnclick1(checked1)}
           id="outlined-basic"
-          variant="outlined"
+          label="Option1"
+          placeholder="Tell us more"
+          //style={style1}
           value={quiz && quiz.select1 ? quiz.select1 : ""}
-          readOnly
-          onfocus="this.blur()"
+          onChange={(e) => setQuiz("select1", e.target.value)}
           style={inputStyle}
         />
       </div>
-      <div className={classes.styleCheck} style={styleCheck}>
+      <div className={classes.styleCheck}>
         <Checkbox
           icon={<StarBorderIcon style={{ color: "white", fontSize: "32px" }} />}
           checkedIcon={
             <StarIcon style={{ color: "white", fontSize: "32px" }} />
           }
-          checked={checked2}
-          onChange={handleChange2}
-          name="checked2"
+          checked={quiz && quiz.check2 ? true : false}
+          onChange={(event) => setQuiz("check2", event.target.checked)}
+          inputProps={{ "aria-label": "primary checkbox" }}
           style={checkStyle}
         />
         <input
+          type="text"
           className={classes.style2}
-          onClick={() => btnclick2(checked2)}
           id="outlined-basic"
-          variant="outlined"
+          label="Option2"
+          placeholder="Tell us more"
+          //style={style2}
           value={quiz && quiz.select2 ? quiz.select2 : ""}
-          readOnly
-          onfocus="this.blur()"
+          onChange={(e) => setQuiz("select2", e.target.value)}
           style={inputStyle}
         />
       </div>
-      <div className={classes.styleCheck} style={styleCheck}>
+      <div className={classes.styleCheck}>
         <Checkbox
           icon={
             <FavoriteBorderIcon style={{ color: "white", fontSize: "30px" }} />
@@ -214,23 +153,23 @@ export default function Checkboxes({ quiz }) {
           checkedIcon={
             <FavoriteIcon style={{ color: "white", fontSize: "30px" }} />
           }
-          checked={checked3}
-          onChange={handleChange3}
-          name="checked3"
+          checked={quiz.check3}
+          onChange={(event) => setQuiz("check3", event.target.checked)}
+          inputProps={{ "aria-label": "primary checkbox" }}
           style={checkStyle}
         />
         <input
+          type="text"
           className={classes.style3}
-          onClick={() => btnclick3(checked3)}
           id="outlined-basic"
-          variant="outlined"
+          label="Option3"
+          placeholder="Tell us more"
           value={quiz && quiz.select3 ? quiz.select3 : ""}
-          readOnly
-          onfocus="this.blur()"
+          onChange={(e) => setQuiz("select3", e.target.value)}
           style={inputStyle}
         />
       </div>
-      <div className={classes.styleCheck} style={styleCheck}>
+      <div className={classes.styleCheck}>
         <Checkbox
           icon={
             <CheckBoxOutlineBlankIcon
@@ -242,26 +181,22 @@ export default function Checkboxes({ quiz }) {
               style={{ color: "white", fontSize: "30px" }}
             />
           }
-          checked={checked4}
-          onChange={handleChange4}
-          name="checked4"
+          checked={quiz.check4}
+          onChange={(event) => setQuiz("check4", event.target.checked)}
+          inputProps={{ "aria-label": "primary checkbox" }}
           style={checkStyle}
         />
         <input
+          type="text"
           className={classes.style4}
-          onClick={() => btnclick4(checked4)}
           id="outlined-basic"
-          variant="outlined"
+          label="Option4"
+          placeholder="Tell us more"
+          //style={style4}
           value={quiz && quiz.select4 ? quiz.select4 : ""}
-          readOnly
-          onfocus="this.blur()"
+          onChange={(e) => setQuiz("select4", e.target.value)}
           style={inputStyle}
         />
-      </div>
-      <div>
-        <Button variant="contained" color="secondary" onClick={handleCorrect}>
-          Save
-        </Button>
       </div>
     </form>
   );
