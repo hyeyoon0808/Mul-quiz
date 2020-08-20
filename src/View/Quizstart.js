@@ -6,6 +6,7 @@ import ReactTimeout from "react-timeout";
 import Timeout from "../Material/Timeout";
 
 class Quizstart extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -60,6 +61,7 @@ class Quizstart extends Component {
       justifyContent: "center",
       alignItems: "center",
     };
+  
 
     return (
       <div>
@@ -67,30 +69,10 @@ class Quizstart extends Component {
           <Header as="h1" textAlign="center" style={styleHeader}>
             {quiz.title}
           </Header>
-        </Segment>
-
-        <div
-          style={{
-            backgroundColor: this.state.on ? alert("시간 초과입니다.") : {},
-          }}
-        >
+        </Segment>  
           <Timeout quiz={quiz}/>
 
-          {
-            this.state.on ? <Timeout/> : console.log('시간 초과입니다.')
-          }
-
-          <button onClick={() => this.handleClick(quiz.time)}>start</button>
-
-
-
-        </div>
         <div>
-          <div>
-            <div style={time}>
-              <h1>{quiz.time}</h1>
-            </div>
-          </div>
           <div>
             <div style={imgForm}>
               <div style={imgcenterBox}>
