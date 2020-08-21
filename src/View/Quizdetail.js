@@ -49,7 +49,7 @@ class Quizdetail extends Component {
           </Grid.Row>
 
           <Button primary onClick={onModify} style={modifyBtn}>
-            Modify
+            Modify / Save
           </Button>
         </Grid>
       </QuizInputForm>

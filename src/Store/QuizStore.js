@@ -4,22 +4,24 @@ import Quizs from "../Quiz";
 
 class QuizStore {
     
-    @observable quizs=Quizs;
-    @observable selectquiz = Quizs[0];
-    @observable hoverquiz;
-    @observable gamestart = false;
+  @observable quizs=Quizs;
+  @observable selectquiz = Quizs[0];
+  @observable hoverquiz;
+  @observable gamestart = false;
 
-    @observable checked = false;
-    @observable selectedFile = null;
-    
-    //login
-    @observable login = false;
-    @observable user = "test";
-    @observable passwd = "123";
-    @observable error = "";
-    @observable idValue = "";
-    @observable pwValue = "";
-    @observable preventDefault = "";
+  @observable checked = false;
+  @observable selectedFile = null;
+
+  @observable totalScore = 0;
+  
+  //login
+  @observable login = false;
+  @observable user = "test";
+  @observable passwd = "123";
+  @observable error = "";
+  @observable idValue = "";
+  @observable pwValue = "";
+  @observable preventDefault = "";
 
   @computed
   get getquizs() {
@@ -37,15 +39,20 @@ class QuizStore {
   }
 
 
-    @computed
-    get getgamestart(){
-        return this.gamestart ? this.gamestart : false
-    }
+  @computed
+  get getgamestart(){
+      return this.gamestart ? this.gamestart : false
+  }
 
-    @computed
-    get getlogin(){
-        return this.login ? this.login : false
-    }
+  @computed
+  get getlogin(){
+      return this.login ? this.login : false
+  }
+  
+  @computed
+  get getTotal(){
+    return this.totalScore ? this.totalScore : 0;
+  }
 
     @action
     setQuizProps(name, value) {
@@ -58,7 +65,9 @@ class QuizStore {
 
   @action
     selectQuiz(quiz){
+        this.quizs[0].default = false;
         this.selectquiz = quiz;
+        
     }
 
   @action
@@ -110,6 +119,10 @@ class QuizStore {
     @action
     changePw(value){this.pwValue = value}
     
+    @action
+    TotalScore(score){
+      this.totalScore += score
+    }
 }
 
 export default new QuizStore();

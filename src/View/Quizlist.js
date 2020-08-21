@@ -14,7 +14,9 @@ const MapList = styled.div`
     margin: 0 auto;
   }
   .import > button {
-    margin-top: 100px;
+    margin-top: 20px;
+    width:80%;
+    font-size:16px;
   }
 `;
 

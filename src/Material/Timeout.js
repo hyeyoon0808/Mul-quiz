@@ -68,10 +68,10 @@ export default function SimpleModal({quiz}) {
     fontSize:"20px",
   }
   const count = {
-    marginTop:"20px",
+    marginTop:"40px",
     color:" rgb(76, 175, 80)",
     fontWeight:" bold",
-    fontSize:" 30px",
+    fontSize:" 80px",
   }
 
   return (

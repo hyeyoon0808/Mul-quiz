@@ -1,8 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import AddCircleOutlineRoundedIcon from '@material-ui/icons/AddCircleOutlineRounded';
 import styled from 'styled-components';
 
 const ButtonBox = styled.div`
@@ -41,6 +37,7 @@ export default function UploadButtons({quiz,setQuiz}) {
     height: '45px',
     top:'-12%',
     left:'42%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const small1 = {
@@ -50,6 +47,7 @@ export default function UploadButtons({quiz,setQuiz}) {
     height: '45px',
     top:'-5%',
     left:'64%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const small2 = {
@@ -59,6 +57,7 @@ export default function UploadButtons({quiz,setQuiz}) {
     height: '45px',
     top:'10%',
     left:'71%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const small3 = {
@@ -67,7 +66,8 @@ export default function UploadButtons({quiz,setQuiz}) {
     width:'45px',
     height: '45px',
     left:'64%',
-    top:'25%'
+    top:'25%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const small4 = {
@@ -77,6 +77,7 @@ export default function UploadButtons({quiz,setQuiz}) {
     height: '45px',
     left:'42%',
     top:'33%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const small5 = {
@@ -86,6 +87,7 @@ export default function UploadButtons({quiz,setQuiz}) {
     height: '45px',
     top:'26%',
     left:'21%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const small6 = {
@@ -95,6 +97,7 @@ export default function UploadButtons({quiz,setQuiz}) {
     height: '45px',
     top:'10%',
     left:'12%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const small7 = {
@@ -104,6 +107,7 @@ export default function UploadButtons({quiz,setQuiz}) {
     height: '45px',
     top:'-6%',
     left:'21%',
+    transition:"all 0.3s ease-in-out"
   }
 
   const display=(display,name,value)=>{

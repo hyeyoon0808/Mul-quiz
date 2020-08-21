@@ -102,20 +102,13 @@ const saveBtn = {
   fontSize: "18px",
 };
 
-export default function Checkboxes({ quiz }) {
+export default function Checkboxes({ quiz, onTotalScore,totalScore }) {
   const classes = useStyles();
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
   const [checked3, setChecked3] = React.useState(false);
   const [checked4, setChecked4] = React.useState(false);
-  const [on, setOn] = React.useState(false);
 
-  const handleOn = () => {
-    setOn(true);
-  };
-  const handleOff = () => {
-    setOn(false);
-  };
   const [check1, setCheck1] = React.useState(
     checked1 === quiz.check1 ? true : false
   );
@@ -164,18 +157,28 @@ export default function Checkboxes({ quiz }) {
     e.target.checked === quiz.check4 ? setCheck4(true) : setCheck4(false);
   };
   const handleCorrect = () => {
-    console.log(quiz);
-
-
+     totalScore = 0;
     check1 && true
       ? check2 && true
         ? check3 && true
           ? check4 && true
-            ? alert("정답입니다 :<")
+            ? alert("정답입니다 :>")
             : alert("오답입니다 :<")
           : alert("오답입니다 :<")
         : alert("오답입니다 :<")
       : alert("오답입니다 :<");
+
+      check1 && true
+      ? check2 && true
+        ? check3 && true
+          ? check4 && true
+            ? totalScore += 40
+            : totalScore += 0
+          : totalScore += 0
+        : totalScore += 0
+      : totalScore += 0
+      onTotalScore(totalScore)
+
   };
   return (
     <form noValidate autoComplete="off">
@@ -283,7 +286,10 @@ export default function Checkboxes({ quiz }) {
         <Button
           variant="contained"
           color="secondary"
-          onClick={handleCorrect}
+          onClick={() => {
+            handleCorrect()
+            
+          }}
           style={saveBtn}
         >
           Submit

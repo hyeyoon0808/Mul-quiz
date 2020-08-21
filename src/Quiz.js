@@ -11,6 +11,7 @@ const Quizs = [
     check2: false,
     check3: false,
     check4: false,
+    default:true
   },
 
   {
@@ -25,6 +26,7 @@ const Quizs = [
     check2: false,
     check3: false,
     check4: false,
+    default:false
   },
 
   {
@@ -39,6 +41,7 @@ const Quizs = [
     check2: false,
     check3: false,
     check4: false,
+    default:false
   },
 ];
 

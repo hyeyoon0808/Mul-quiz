@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Header, Image, Segment } from "semantic-ui-react";
 import UserAns from "../Material/UserAns";
-import { Hidden } from "@material-ui/core";
-import ReactTimeout from "react-timeout";
 import Timeout from "../Material/Timeout";
-import styled from "styled-components";
 
 
 class Quizstart extends Component {
@@ -27,7 +24,7 @@ class Quizstart extends Component {
   };
 
   render() {
-    const { quiz, setQuiz } = this.props;
+    const { quiz, setQuiz,totalScore,onTotalScore } = this.props;
 
     const middleForm = {
       margin: "40px 0",
@@ -63,10 +60,12 @@ class Quizstart extends Component {
       display: "flex",
       alignItems: "center",
       margin: "30px 0",
-      borderRadius: "20px"
+      borderRadius: "20px",
     }
     const styleHeader = {
       width: "100%",
+      color:"#666",
+      fontSize:"40px"
     };
     const myGrid = {
       width: "25%",
@@ -87,7 +86,7 @@ class Quizstart extends Component {
     const myPoint = {
       color: "#f50057",
       fontWeight: "bold",
-      fontSize: "20px"
+      fontSize: "60px"
     }
     return (
       <div>
@@ -116,12 +115,12 @@ class Quizstart extends Component {
           <div style={myGrid}>
             <div style={myForm}>
               <p style={myPointTxt}>Your POINT</p>
-              <div style={myPoint}>{quiz.point}</div>
+                <div style={myPoint}>{quiz.point} / {totalScore}</div>
             </div>
           </div>
         </div>
         <div>
-            <UserAns quiz={quiz} setQuiz={setQuiz}/>
+            <UserAns quiz={quiz} setQuiz={setQuiz} onTotalScore={onTotalScore} totalScore={totalScore}/>
         </div>
       </div>
     );

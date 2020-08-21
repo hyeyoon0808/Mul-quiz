@@ -34,7 +34,7 @@ const ListItems = styled.div`
   }
   .boxItem {
     overflow: hidden;
-    height: 150px;
+    height: 170px;
     padding: 5px 10px;
     border-radius: 10px;
     background: #f2f2f2;
@@ -45,7 +45,7 @@ const ListItems = styled.div`
   }
   .boxItemCheck {
     overflow: hidden;
-    height: 150px;
+    height: 170px;
     padding: 5px 10px;
     border-radius: 10px;
     background: #fff;
@@ -117,7 +117,35 @@ class Quizitem extends Component {
 
     return (
       <ListItems>
-        {selectquiz === quiz ? (
+        {quiz.default ? (
+          <Item.Group className={classNames("ListItem", "checked")}>
+          <Item
+            style={selectItem}
+            onClick={() => {
+              onSelect(quiz);
+            }}
+          >
+            <Item.Content>
+              <Item.Header as="a" style={titleItem}>
+                {index} test
+              </Item.Header>
+              <MdDelete onClick={() => onRemove()}>제거</MdDelete>
+              <div className={classNames("boxItemCheck", "checkedBox")}>
+                <Item.Header as="a" style={boxTitleItem}>
+                  {quiz.title}
+                </Item.Header>
+                <div className={"imgBox"}></div>
+                <ul className={"checkBarForm"}>
+                  <li className={"checkBar"}></li>
+                  <li className={"checkBar"}></li>
+                  <li className={"checkBar"}></li>
+                  <li className={"checkBar"}></li>
+                </ul>
+              </div>
+            </Item.Content>
+          </Item>
+        </Item.Group>
+        ) : selectquiz === quiz ? (
           <Item.Group className={classNames("ListItem", "checked")}>
             <Item
               style={selectItem}
@@ -187,6 +215,7 @@ class Quizitem extends Component {
           </Item.Group>
         )}
       </ListItems>
+            
     );
   }
 }

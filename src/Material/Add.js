@@ -27,15 +27,6 @@ const Style = styled.div`
 }
 
 `
-const MapList = styled.div`
-  box-shadow: 0px 0px 4px #b3b3b3;
-  height: 100%;
-  overflow: scroll;
-  .center {
-    display: block;
-    margin: 0 auto;
-  }
-`;
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -86,13 +77,16 @@ export default function SimpleModal({onAddQuiz}) {
     </Style>
   );
 
+  const center = {width:"80%",height:"50px", fontSize:"18px" }
   return (
-    <div>
+    <addBtn>
       <Button type="button" onClick={handleOpen}
       variant="contained"
       primary
       disableElevation
-      className={"center"}>
+      style={center}
+      className={"center"}
+      >
       Add question
       </Button>
       <Modal
@@ -103,6 +97,6 @@ export default function SimpleModal({onAddQuiz}) {
       >
         {body}
       </Modal>
-    </div>
+    </addBtn>
   );
 }
