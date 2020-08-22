@@ -27,6 +27,23 @@ const InputForm = styled.div`
     width: 90%;
     margin: 0 auto;
   }
+  .textTitle{
+    text-align:center;
+    color:#f50057;
+  }
+  .textForm{
+    overflow:hidden;
+    list-style:decimal;
+    font-weight: bold;
+    font-size:18px;
+    padding-left:20px;
+  }
+  .texts{
+    font-size:16px;
+    padding-left:5px;
+    margin-bottom:10px;
+    line-height:20px;
+  }
 `;
 
 class Detailinput extends Component {
@@ -50,7 +67,7 @@ class Detailinput extends Component {
     reader.readAsDataURL(file);
   };
   render() {
-    const { quiz, setQuiz } = this.props;
+    const { quiz, setQuiz,quizs } = this.props;
     let profile_preview = null;
     if (this.state.file !== "") {
       profile_preview = (
@@ -72,6 +89,18 @@ class Detailinput extends Component {
       borderRadius: "20px",
     };
     const leftForm = { width: "20%", textAlign: "center" };
+    const rightForm = {
+      width: "20%",
+      textAlign: "left",
+      position:"absolute",
+      right:"0",
+      top:"0",
+      border: "4px solid #d9d9d9",
+      padding:"20px",
+      boxSizing:"borderBox",
+      minWidth:"300px"
+
+    };
     const optionFont = {
       fontWeight: "bold",
       fontSize: "16px",
@@ -82,11 +111,11 @@ class Detailinput extends Component {
         <Grid columns={2} divided className="gridForm">
           <Grid.Column style={leftForm}>
             <div className="TimeForm">
-              <Time quiz={quiz} setQuiz={setQuiz} />
+              <Time quiz={quiz} quizs={quizs} setQuiz={setQuiz} />
             </div>
             <Divider />
             <div className="pointForm">
-              <Point quiz={quiz} setQuiz={setQuiz} />
+              <Point quiz={quiz} quizs={quizs} setQuiz={setQuiz} />
             </div>
             <Divider />
 
@@ -98,6 +127,18 @@ class Detailinput extends Component {
             <Form>
               <Upload />
             </Form>
+          </Grid.Column>
+
+          <Grid.Column style={rightForm}>
+              <h3 className={"textTitle"}>사용방법</h3>
+              <ul className={"textForm"}>
+                <li className={"texts"}>Add question을 통해 퀴즈를 생성합니다.</li>
+                <li className={"texts"}>제목, 시간, 포인트, 문제 설정을 해줍니다.</li>
+                <li className={"texts"}>설정이 완료 되었으면 save를 반드시 해줍니다.</li>
+                <li className={"texts"}>Done 버튼을 눌러 Quiz 실행 화면으로 이동합니다..</li>
+                <li className={"texts"}>start Quiz Modal 버튼을 누르면 설정한 타이머가 작동합니다.</li>
+                <li className={"texts"}>즐겁게 사용해주시면 됩니다.</li>
+              </ul>
           </Grid.Column>
         </Grid>
       </InputForm>

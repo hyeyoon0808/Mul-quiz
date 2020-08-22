@@ -102,7 +102,7 @@ const saveBtn = {
   fontSize: "18px",
 };
 
-export default function Checkboxes({ quiz, onTotalScore,totalScore }) {
+export default function Checkboxes({ quiz, onTotalScore,totalScore ,onNextQuiz}) {
   const classes = useStyles();
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
@@ -167,7 +167,7 @@ export default function Checkboxes({ quiz, onTotalScore,totalScore }) {
           : alert("오답입니다 :<")
         : alert("오답입니다 :<")
       : alert("오답입니다 :<");
-
+//점수 증가
       check1 && true
       ? check2 && true
         ? check3 && true
@@ -179,6 +179,55 @@ export default function Checkboxes({ quiz, onTotalScore,totalScore }) {
       : totalScore += 0
       onTotalScore(totalScore)
 
+//checkBox 초기화
+      check1 && true
+      ? check2 && true
+        ? check3 && true
+          ? check4 && true
+            ? setChecked1(false)
+            : setChecked1(false)
+          : setChecked1(false)
+        : setChecked1(false)
+      : setChecked1(false)
+      check1 && true
+      ? check2 && true
+        ? check3 && true
+          ? check4 && true
+            ? setChecked2(false)
+            : setChecked2(false)
+          : setChecked2(false)
+        : setChecked2(false)
+      : setChecked2(false)
+      check1 && true
+      ? check2 && true
+        ? check3 && true
+          ? check4 && true
+            ? setChecked3(false)
+            : setChecked3(false)
+          : setChecked3(false)
+        : setChecked3(false)
+      : setChecked3(false)
+      check1 && true
+      ? check2 && true
+        ? check3 && true
+          ? check4 && true
+            ? setChecked4(false)
+            : setChecked4(false)
+          : setChecked4(false)
+        : setChecked4(false)
+      : setChecked4(false)
+
+      check1 && true
+      ? check2 && true
+        ? check3 && true
+          ? check4 && true
+            ? onNextQuiz(quiz)
+            : totalScore += 0
+          : totalScore += 0
+        : totalScore += 0
+      : totalScore += 0
+      
+      
   };
   return (
     <form noValidate autoComplete="off">
@@ -287,8 +336,7 @@ export default function Checkboxes({ quiz, onTotalScore,totalScore }) {
           variant="contained"
           color="secondary"
           onClick={() => {
-            handleCorrect()
-            
+            handleCorrect() 
           }}
           style={saveBtn}
         >

@@ -23,7 +23,7 @@ class Quizdetail extends Component {
     };
     const modifyBtn={
       position:"absolute",
-      bottom:"33%",
+      bottom:"30%",
       right:"2%",
       width:"200px",
       height:"50px",

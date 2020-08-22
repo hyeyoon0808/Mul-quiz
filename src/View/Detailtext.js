@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Form, TextArea } from 'semantic-ui-react'
 import Tex from "../Material/Tex";
 
 class Detailtext extends Component {

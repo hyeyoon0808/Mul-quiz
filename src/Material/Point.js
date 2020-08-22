@@ -173,8 +173,12 @@ function AirbnbThumbComponent(props) {
   );
 }
 
-export default function CustomizedSlider({quiz,setQuiz}) {
+export default function CustomizedSlider({quiz,setQuiz,quizs}) {
   const classes = useStyles();
+  //전체 포인트 설정
+  for(var i=0; i<quizs.length; i++){
+    quizs[i].point = quiz.point
+  }
 
   const handleSliderChange = (event, newValue) => {
     setQuiz("point",newValue);

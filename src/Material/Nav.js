@@ -193,7 +193,7 @@ export default function PrimarySearchAppBar({gamestart,start}) {
               </ThemeProvider>
               </>
             : <Button variant="contained" color="secondary" style={margin} onClick={()=>start(false)}>Exit</Button>
-            }{console.log(gamestart)}
+            }
 
 
             <IconButton
