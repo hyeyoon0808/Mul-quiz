@@ -68,7 +68,6 @@ class Detailinput extends Component {
       left: "50%",
       transform: "translate(-50%,-50%)",
       boxShadow: "2px 2px 8px 2px #ececec",
-<<<<<<< Updated upstream
       border: "4px solid #d9d9d9",
       borderRadius: "20px",
     };
@@ -78,12 +77,6 @@ class Detailinput extends Component {
       fontSize: "16px",
       color: "#666",
     };
-=======
-      border: "1px solid #d9d9d9",
-      borderRadius: "20px",
-    };
-    const leftForm = { width: "20%", textAlign: "center" };
->>>>>>> Stashed changes
     return (
       <InputForm>
         <Grid columns={2} divided className="gridForm">
