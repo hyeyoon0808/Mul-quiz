@@ -24,8 +24,8 @@ class Quizstart extends Component {
   };
 
   render() {
-    const { quiz, setQuiz,totalScore,onTotalScore } = this.props;
-
+    const { quiz,quizs, setQuiz,totalScore,onTotalScore,onNextQuiz } = this.props;
+    //quiz : getselectquiz
     const middleForm = {
       margin: "40px 0",
       overflow:"hidden"
@@ -88,6 +88,7 @@ class Quizstart extends Component {
       fontWeight: "bold",
       fontSize: "60px"
     }
+    
     return (
       <div>
 
@@ -101,7 +102,7 @@ class Quizstart extends Component {
 
         <div style={myGrid}>
           <div style={myForm}>
-            <Timeout quiz={quiz} />
+            <Timeout quiz={quiz} quizs={quizs} />
           </div>
         </div>
           
@@ -120,7 +121,8 @@ class Quizstart extends Component {
           </div>
         </div>
         <div>
-            <UserAns quiz={quiz} setQuiz={setQuiz} onTotalScore={onTotalScore} totalScore={totalScore}/>
+            <UserAns quiz={quiz} quizs={quizs} setQuiz={setQuiz} onTotalScore={onTotalScore} onNextQuiz={onNextQuiz} totalScore={totalScore}/>
+            
         </div>
       </div>
     );

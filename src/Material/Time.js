@@ -11,9 +11,13 @@ const ButtonBox = styled.div`
   }
 `
 
-export default function UploadButtons({quiz,setQuiz}) {
-
+export default function UploadButtons({quiz,setQuiz,quizs}) {
   const [visible, setVisible] = React.useState(false); 
+
+  //전체 시간초 설정
+  for(var i=0; i<quizs.length; i++){
+    quizs[i].time = quiz.time
+  }
 
   const big = {
     marginBottom:'25px',

@@ -27,7 +27,7 @@ class QuizStore {
   get getquizs() {
     return this.quizs ? this.quizs.slice() : [];
   }
-
+  
   @computed
   get getselectquiz() {
     return this.selectquiz ? this.selectquiz : {};
@@ -56,7 +56,6 @@ class QuizStore {
 
     @action
     setQuizProps(name, value) {
-    console.log(name);
     this.selectquiz = {
       ...this.selectquiz,
       [name]: value,
@@ -65,9 +64,13 @@ class QuizStore {
 
   @action
     selectQuiz(quiz){
-        this.quizs[0].default = false;
+        for(var i=0; i<this.quizs.length; i++){
+          this.quizs[i].default = false;
+          this.quizs[i].selectCheck = false;
+        }
+        quiz.selectCheck = quiz.selectCheck === false ? true : false
         this.selectquiz = quiz;
-        
+        console.log(quiz.selectCheck)
     }
 
   @action
@@ -77,6 +80,23 @@ class QuizStore {
       ...this.selectquiz,
       [this.selectquiz.imgUrl]: event.target.checked,
     };
+  }
+  @action
+  nextQuiz(quiz){
+    for(var i=0; i<this.quizs.length; i++){
+      this.quizs[i].default = false;
+      this.quizs[i].selectCheck = false;
+      if(this.quizs[i] === quiz){ 
+        this.selectquiz = this.quizs[i+1];
+        console.log( this.selectquiz)
+      }
+    }
+    if(this.selectquiz === undefined){
+      alert("Quiz가 끝났습니다. 수고하셨습니다.")
+    }else{
+      this.selectquiz.selectCheck = true;
+    }
+    
   }
 
   @action

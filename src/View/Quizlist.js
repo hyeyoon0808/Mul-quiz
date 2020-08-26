@@ -30,6 +30,7 @@ class Quizlist extends Component {
       selectquiz,
       onItemMouseOver,
       hoverquiz,
+      gamestart
     } = this.props;
 
     const quizlist = quizs.map((quiz, index) => (
@@ -42,15 +43,15 @@ class Quizlist extends Component {
         selectquiz={selectquiz}
         onItemMouseOver={onItemMouseOver}
         hoverquiz={hoverquiz}
+        gamestart={gamestart}
       />
     ));
 
     return (
       <MapList>
         <ItemGroup>{quizlist}</ItemGroup>
-
-        <Add onAddQuiz={onAddQuiz} />
-
+        {gamestart && true ? "" : <Add onAddQuiz={onAddQuiz} />}
+      
         <div className={"import"}>
           <Import />
         </div>

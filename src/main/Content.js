@@ -88,6 +88,9 @@ export default function CenteredGrid({ login }) {
   const loginMove = () => {
     alert("로그인이 필요한 서비스입니다. 로그인 페이지로 이동합니다.")
   }
+  const notice = () =>{
+    alert("1920 해상도가 아닌 사용자 분들께서는 Ctrl + 마우스 휠을 이용해 브라우저를 줄이시면 더욱 쾌적한 게임을 즐기실 수 있습니다. 감사합니다. ")
+  }
 
   return (
     <Contents className={classes.root}>
@@ -114,7 +117,7 @@ export default function CenteredGrid({ login }) {
           <Paper className={classNames(classes.paper, "content_2")}>
             {login ?
               <Link to="/quiz">
-                <Button variant="contained" className={"buttonPosition"}>Create Quiz</Button>
+                <Button variant="contained" className={"buttonPosition"} onClick={notice}>Create Quiz</Button>
               </Link>
               :
               <Link to="/login">
@@ -127,10 +130,10 @@ export default function CenteredGrid({ login }) {
 
         <Grid item xs={3}>
           <Paper className={"classes.paper"}>
-            <Title>My Kahoots</Title>
+            <Title>My MulQuiz</Title>
             <Paper className={classNames(classes.paper, "content_shadow")}>
               <DottedBox>
-                <p>Create your first kahoot using one of our templates.</p>
+                <p>Create your first MulQuiz using one of our templates.</p>
                 {login ? 
                 <Link to="/quiz">
                   <Button
@@ -138,6 +141,7 @@ export default function CenteredGrid({ login }) {
                   primary
                   disableElevation
                   className={"center"}
+                  onClick={notice}
                 >Create Quiz</Button>
                 </Link>
                 :
@@ -180,24 +184,24 @@ export default function CenteredGrid({ login }) {
             <Paper className={classNames("newsForm", "content_shadow")}>
               <ul>
                 <li className={"newsList"}>
-                  <div className={"listMain"}>Learn at home: Immersive learn-to-read game Poio by Kahoot! is now available in the U.S.</div>
-                  <div className={"listSub"}>- Kahoot! extends its learning app offerings as Poio joins educational math studio... </div>
+                  <div className={"listMain"}>Learn at home: Immersive learn-to-read game Poio by MulQuiz! is now available in the U.S.</div>
+                  <div className={"listSub"}>- MulQuiz! extends its learning app offerings as Poio joins educational math studio... </div>
                 </li>
                 <li className={"newsList"}>
-                  <div className={"listMain"}>Host a kahoot via Skype to connect with family, friends, and colleagues</div>
-                  <div className={"listSub"}>- Playing Kahoot! online is a popular way for families, groups of friends, teachers, and company employees to connect and spend some social time together. Learn how you... </div>
+                  <div className={"listMain"}>Host a MulQuiz via Skype to connect with family, friends, and colleagues</div>
+                  <div className={"listSub"}>- Playing MulQuiz! online is a popular way for families, groups of friends, teachers, and company employees to connect and spend some social time together. Learn how you... </div>
                 </li>
                 <li className={"newsList"}>
                   <div className={"listMain"}>New feature: Add images as answers to engage pre-readers and students who struggle with text!</div>
                   <div className={"listSub"}>- As one of our top requests, you can now use images as answer alternatives. It will help...  </div>
                 </li>
                 <li className={"newsList"}>
-                  <div className={"listMain"}>Kahoot! offers free access to all features to support distance learning in schools closed by the coronavirus outbreak</div>
-                  <div className={"listSub"}>- Schools can get free access to Kahoot! Premium to empower distance and online... </div>
+                  <div className={"listMain"}>MulQuiz! offers free access to all features to support distance learning in schools closed by the coronavirus outbreak</div>
+                  <div className={"listSub"}>- Schools can get free access to MulQuiz! Premium to empower distance and online... </div>
                 </li>
                 <li className={"newsList"}>
-                  <div className={"listMain"}>5 ways to play Kahoot! challenges at home and in class</div>
-                  <div className={"listSub"}>- With questions and answers on students’ devices and the ability for teachers to switch off the question timer, playing Kahoot! as a challenge increases focus, promotes ... </div>
+                  <div className={"listMain"}>5 ways to play MulQuiz! challenges at home and in class</div>
+                  <div className={"listSub"}>- With questions and answers on students’ devices and the ability for teachers to switch off the question timer, playing MulQuiz! as a challenge increases focus, promotes ... </div>
                 </li>
               </ul>
             </Paper>
@@ -209,14 +213,14 @@ export default function CenteredGrid({ login }) {
             <Title>Latest reports</Title>
             <Paper className={classNames(classes.paper, "content_shadow")}>
               <DottedBox>
-                <p>Host your first kahoot to see reports here.</p>
+                <p>Host your first MulQuiz to see reports here.</p>
                 <Button
                   variant="contained"
                   primary
                   disableElevation
                   className={"center"}
                   onClick={preparingService}
-                >Host Kahoot</Button>
+                >Host MulQuiz</Button>
               </DottedBox>
             </Paper>
           </Paper>

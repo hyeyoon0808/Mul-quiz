@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Item } from "semantic-ui-react";
 import styled from "styled-components";
-import classNames from "classname";
+import classNames from "classnames";
 import { MdDelete } from "react-icons/md";
 
 const ListItems = styled.div`
@@ -110,11 +110,9 @@ class Quizitem extends Component {
       quiz,
       onRemove,
       onSelect,
-      selectquiz,
       onItemMouseOver,
       hoverquiz,
     } = this.props;
-
     return (
       <ListItems>
         {quiz.default ? (
@@ -127,7 +125,7 @@ class Quizitem extends Component {
           >
             <Item.Content>
               <Item.Header as="a" style={titleItem}>
-                {index} test
+                {index}번 Quiz
               </Item.Header>
               <MdDelete onClick={() => onRemove()}>제거</MdDelete>
               <div className={classNames("boxItemCheck", "checkedBox")}>
@@ -145,7 +143,7 @@ class Quizitem extends Component {
             </Item.Content>
           </Item>
         </Item.Group>
-        ) : selectquiz === quiz ? (
+        ) : quiz.selectCheck ? (
           <Item.Group className={classNames("ListItem", "checked")}>
             <Item
               style={selectItem}
@@ -155,7 +153,7 @@ class Quizitem extends Component {
             >
               <Item.Content>
                 <Item.Header as="a" style={titleItem}>
-                  {index} test
+                  {index}번 Quiz
                 </Item.Header>
                 <MdDelete onClick={() => onRemove()}>제거</MdDelete>
                 <div className={classNames("boxItemCheck", "checkedBox")}>
@@ -189,11 +187,11 @@ class Quizitem extends Component {
             >
               <Item.Content>
                 <Item.Header as="a" style={titleItem}>
-                  {index}. test
+                  {index}번 Quiz
                 </Item.Header>
                 {hoverquiz === quiz ? (
                   <div className={"svgBox"}>
-                    <MdDelete onClick={() => onRemove()}>제거</MdDelete>
+                    {/*<MdDelete  onClick={() => onRemove()}>제거</MdDelete>*/}
                   </div>
                 ) : (
                   <div className={"svgBox"}></div>

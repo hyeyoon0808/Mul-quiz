@@ -31,8 +31,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MultilineTextFields({quiz,setQuiz}) {
   const classes = useStyles();
-  const [value, setValue] = React.useState('Controlled');
-
  
   return (
     <form className={classes.root} noValidate autoComplete="off">
