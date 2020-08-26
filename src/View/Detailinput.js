@@ -29,7 +29,11 @@ const InputForm = styled.div`
   }
   .textTitle{
     text-align:center;
+<<<<<<< HEAD
     color:#ff5656;
+=======
+    color:#f50057;
+>>>>>>> ec5ff4338dbbce4508de0659f0f637b436521f82
   }
   .textForm{
     overflow:hidden;
@@ -43,7 +47,10 @@ const InputForm = styled.div`
     padding-left:5px;
     margin-bottom:10px;
     line-height:20px;
+<<<<<<< HEAD
     color:#666;
+=======
+>>>>>>> ec5ff4338dbbce4508de0659f0f637b436521f82
   }
 `;
 
