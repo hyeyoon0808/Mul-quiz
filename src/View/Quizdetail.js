@@ -23,7 +23,7 @@ class Quizdetail extends Component {
     };
     const modifyBtn={
       position:"absolute",
-      bottom:"33%",
+      bottom:"30%",
       right:"2%",
       width:"200px",
       height:"50px",
@@ -49,7 +49,7 @@ class Quizdetail extends Component {
           </Grid.Row>
 
           <Button primary onClick={onModify} style={modifyBtn}>
-            Modify
+            Modify / Save
           </Button>
         </Grid>
       </QuizInputForm>

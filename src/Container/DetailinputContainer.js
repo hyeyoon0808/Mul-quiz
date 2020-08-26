@@ -14,12 +14,14 @@ class DetailinputContainer extends Component {
   
   render() {
     const quiz = this.props.QuizStore.getselectquiz;
+    const quizs = this.props.QuizStore.getquizs;
     return (
       <div>
         <Detailinput
           quiz={quiz}
           setQuiz={this.setQuiz}
           setImage={this.setImage}
+          quizs={quizs}
         />
       </div>
     );

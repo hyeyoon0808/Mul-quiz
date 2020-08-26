@@ -6,7 +6,8 @@ import { inject, observer } from "mobx-react";
 @observer
 class DetailanswerContainer extends Component {
   setQuiz = (name, value) => {
-    this.props.QuizStore.setQuizProps(name, value);
+    const quiz=this.props.QuizStore.getselectquiz;
+    this.props.QuizStore.setQuizProps(name, value, quiz);
   };
 
   setCheck = (e) => {

@@ -14,7 +14,9 @@ const MapList = styled.div`
     margin: 0 auto;
   }
   .import > button {
-    margin-top: 100px;
+    margin-top: 20px;
+    width:80%;
+    font-size:16px;
   }
 `;
 
@@ -28,6 +30,7 @@ class Quizlist extends Component {
       selectquiz,
       onItemMouseOver,
       hoverquiz,
+      gamestart
     } = this.props;
 
     const quizlist = quizs.map((quiz, index) => (
@@ -40,15 +43,15 @@ class Quizlist extends Component {
         selectquiz={selectquiz}
         onItemMouseOver={onItemMouseOver}
         hoverquiz={hoverquiz}
+        gamestart={gamestart}
       />
     ));
 
     return (
       <MapList>
         <ItemGroup>{quizlist}</ItemGroup>
-
-        <Add onAddQuiz={onAddQuiz} />
-
+        {gamestart && true ? "" : <Add onAddQuiz={onAddQuiz} />}
+      
         <div className={"import"}>
           <Import />
         </div>

@@ -99,6 +99,9 @@ export default function PrimarySearchAppBar({ login, onLoginClick }) {
   const loginMove = () => {
     alert("로그인이 필요한 서비스입니다. 로그인 페이지로 이동합니다.")
   }
+  const notice = () =>{
+    alert("1920 해상도가 아닌 사용자 분들께서는 Ctrl + 마우스 휠을 이용해 브라우저를 줄이시면 더욱 쾌적한 게임을 즐기실 수 있습니다. 감사합니다. ")
+  }
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -196,7 +199,7 @@ export default function PrimarySearchAppBar({ login, onLoginClick }) {
             <ThemeProvider theme={theme} >
               {login ?
                 <Link to="/quiz">
-                <Button variant="contained" color="secondary" className={classes.margin} style={margin}>
+                <Button variant="contained" color="secondary" className={classes.margin} style={margin} onClick={notice}>
                   Create
                 </Button>
               </Link> 

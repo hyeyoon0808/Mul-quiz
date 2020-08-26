@@ -14,7 +14,9 @@ const useStyles = makeStyles((theme) => ({
       height: '120px',
       fontSize: '2em',
       textAlign: 'center',
-      borderRadius:"20px"
+      borderRadius:"20px",
+      fontWeight:"bold",
+      color:"#555"
     },
     '& .MuiInputBase-input': {
       
@@ -29,8 +31,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MultilineTextFields({quiz,setQuiz}) {
   const classes = useStyles();
-  const [value, setValue] = React.useState('Controlled');
-
  
   return (
     <form className={classes.root} noValidate autoComplete="off">

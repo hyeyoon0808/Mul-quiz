@@ -8,13 +8,12 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
+  // const top = 60 + rand();
+  // const left = 40 + rand();
   return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
+    top: `50%`,
+    left: `50%`,
+    transform: `translate(-50%, -50%)`,
   };
 }
 
@@ -26,15 +25,18 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    textAlign:'center',
   },
 }));
 
-export default function SimpleModal({quiz}) {
+export default function SimpleModal({quiz,quizs}) {
+
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
   const [time,setTime] = React.useState(0);
+  const [stop,setStop] = React.useState(0)
 
   const handleOpen = () => {
     setOpen(true);
@@ -46,9 +48,27 @@ export default function SimpleModal({quiz}) {
   };
 
   const handleClick = (value) => {
+      // 전체 timeout 설정
+      for(var i=0; i<quizs.length; i++){
+      quizs[i].time = quiz.time
+      console.log(quizs[i])
+    }
     setTimeout(handleOpen, value * 1000);
-    setTime(quiz.time);
-    console.log(value);
+    function foo(){
+      setTime(quiz.time)
+      quiz.time = quiz.time - 1
+      const timeout = setTimeout(foo,1000)
+      if(quiz.time === 0){
+        clearTimeout(timeout);
+      }
+      if(isNaN(quiz.time)){
+        quiz.time = 0
+      }
+    }
+    if(stop === 0){
+      foo()
+      setStop(1)
+    }
   };
 
   const body = (
@@ -67,10 +87,10 @@ export default function SimpleModal({quiz}) {
     fontSize:"20px",
   }
   const count = {
-    marginTop:"20px",
+    marginTop:"40px",
     color:" rgb(76, 175, 80)",
     fontWeight:" bold",
-    fontSize:" 30px",
+    fontSize:" 80px",
   }
 
   return (
@@ -80,6 +100,7 @@ export default function SimpleModal({quiz}) {
           Start Quiz Modal
         </button>
       </p>
+      
       <Modal
         open={open}
         onClose={handleClose}
@@ -88,16 +109,15 @@ export default function SimpleModal({quiz}) {
       >
         {body}
       </Modal>
-
-      <Countdown
+      {open? <div></div>:<Countdown
           date={Date.now() + Number(time)*1000}
           intervalDelay={0}
           precision={3}
           renderer={
-            props => <div style={count}>{props.total/1000}</div>
+            props => <div style={count}>{Math.floor(props.total/1000)}</div>
           }
           onComplete={handleClose}
-        />
+        /> }
     </div>
   );
 }

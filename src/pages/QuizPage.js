@@ -15,8 +15,15 @@ const Wrap = styled.div``;
 class QuizPage extends Component {
   
 start = (value) =>{
-    this.props.QuizStore.setstart(value);
-    }
+  this.props.QuizStore.setstart(value);
+  }
+onTotalScore = (score) => {
+  this.props.QuizStore.TotalScore(score);
+}
+onNextQuiz = (quiz) => {
+  this.props.QuizStore.nextQuiz(quiz)
+}
+
 
   render() {
     const tempStyle = {
@@ -39,6 +46,9 @@ start = (value) =>{
 
     const gamestart = this.props.QuizStore.getgamestart;
     const quiz = this.props.QuizStore.getselectquiz;
+    const quizs = this.props.QuizStore.getquizs;
+    const totalScore = this.props.QuizStore.totalScore;
+    
 
     return (
       <Wrap style={tempStyle} className={"navStyle"} >
@@ -48,11 +58,11 @@ start = (value) =>{
           (
             <Grid columns={2} divided  style={marginRemove} >
             <Grid.Row  style={tempStyle} >
-            <Grid.Column  style={leftStyle} >
+            <Grid.Column  style={leftStyle}>
               <QuizlistContainer />
             </Grid.Column>
             <Grid.Column style={rightStyle} >
-              <Quizstart quiz={quiz} />
+              <Quizstart quiz={quiz} quizs={quizs} onTotalScore={this.onTotalScore} onNextQuiz={this.onNextQuiz} totalScore={totalScore} />
             </Grid.Column>
             </Grid.Row>
             </Grid>
@@ -61,7 +71,7 @@ start = (value) =>{
             (
               <Grid columns={2} divided  style={marginRemove} >
             <Grid.Row  style={tempStyle} >
-              <Grid.Column style={leftStyle} >
+              <Grid.Column style={leftStyle}>
                 <QuizlistContainer />
               </Grid.Column>
 
