@@ -9,7 +9,7 @@ const Quizs = [
     select4: "오구먼",
     check1: false,
     check2: false,
-    check3: false,
+    check3: true,
     check4: false,
     default:true,
     selectCheck:false
@@ -40,7 +40,7 @@ const Quizs = [
     select3: "자신의 아들",
     select4: "친한 고깃집 주인",
     check1: false,
-    check2: false,
+    check2: true,
     check3: false,
     check4: false,
     default:false,
