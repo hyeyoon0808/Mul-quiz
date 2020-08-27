@@ -1,10 +1,8 @@
 import { observable, computed, action } from "mobx";
 import Quizs from "../Quiz";
 
-
 class QuizStore {
-    
-  @observable quizs=Quizs;
+  @observable quizs = Quizs;
   @observable selectquiz = Quizs[0];
   @observable hoverquiz;
   @observable gamestart = false;
@@ -13,7 +11,7 @@ class QuizStore {
   @observable selectedFile = null;
 
   @observable totalScore = 0;
-  
+
   //login
   @observable login = false;
   @observable user = "test";
@@ -23,11 +21,12 @@ class QuizStore {
   @observable pwValue = "";
   @observable preventDefault = "";
 
+  @observable nextquiz;
   @computed
   get getquizs() {
     return this.quizs ? this.quizs.slice() : [];
   }
-  
+
   @computed
   get getselectquiz() {
     return this.selectquiz ? this.selectquiz : {};
@@ -38,24 +37,33 @@ class QuizStore {
     return this.checked ? this.checked : {};
   }
 
-
   @computed
-  get getgamestart(){
-      return this.gamestart ? this.gamestart : false
+  get getgamestart() {
+    return this.gamestart ? this.gamestart : false;
   }
 
   @computed
-  get getlogin(){
-      return this.login ? this.login : false
+  get getlogin() {
+    return this.login ? this.login : false;
   }
-  
+
   @computed
-  get getTotal(){
+  get getTotal() {
+    return this.totalScore ? this.totalScore : 0;
+  }
+  @computed
+  get getnextquiz() {
+    for (var i = 0; i < this.quizs.length; i++) {
+      if (this.quizs[i] === this.selectquiz) {
+        return this.quizs[i + 1];
+      }
+    }
+
     return this.totalScore ? this.totalScore : 0;
   }
 
-    @action
-    setQuizProps(name, value) {
+  @action
+  setQuizProps(name, value) {
     this.selectquiz = {
       ...this.selectquiz,
       [name]: value,
@@ -63,15 +71,15 @@ class QuizStore {
   }
 
   @action
-    selectQuiz(quiz){
-        for(var i=0; i<this.quizs.length; i++){
-          this.quizs[i].default = false;
-          this.quizs[i].selectCheck = false;
-        }
-        quiz.selectCheck = quiz.selectCheck === false ? true : false
-        this.selectquiz = quiz;
-        console.log(quiz.selectCheck)
+  selectQuiz(quiz) {
+    for (var i = 0; i < this.quizs.length; i++) {
+      this.quizs[i].default = false;
+      this.quizs[i].selectCheck = false;
     }
+    quiz.selectCheck = quiz.selectCheck === false ? true : false;
+    this.selectquiz = quiz;
+    console.log(quiz.selectCheck);
+  }
 
   @action
   setFileProps(event) {
@@ -82,21 +90,20 @@ class QuizStore {
     };
   }
   @action
-  nextQuiz(quiz){
-    for(var i=0; i<this.quizs.length; i++){
+  nextQuiz(quiz) {
+    for (var i = 0; i < this.quizs.length; i++) {
       this.quizs[i].default = false;
       this.quizs[i].selectCheck = false;
-      if(this.quizs[i] === quiz){ 
-        this.selectquiz = this.quizs[i+1];
-        console.log( this.selectquiz)
+      if (this.quizs[i] === quiz) {
+        this.selectquiz = this.quizs[i + 1];
+        console.log(this.selectquiz);
       }
     }
-    if(this.selectquiz === undefined){
-      alert("Quiz가 끝났습니다. 수고하셨습니다.")
-    }else{
+    if (this.selectquiz === undefined) {
+      alert("Quiz가 끝났습니다. 수고하셨습니다.");
+    } else {
       this.selectquiz.selectCheck = true;
     }
-    
   }
 
   @action
@@ -122,27 +129,29 @@ class QuizStore {
     );
   }
 
-    @action
-    setstart(value){
-        this.gamestart = value;
+  @action
+  setstart(value) {
+    this.gamestart = value;
+  }
 
-    }
+  @action
+  setlogin(value) {
+    this.login = value;
+  }
+  //로그인
+  @action
+  changeId(value) {
+    this.idValue = value;
+  }
+  @action
+  changePw(value) {
+    this.pwValue = value;
+  }
 
-    @action
-    setlogin(value){
-        this.login = value;
-
-    }
-    //로그인
-    @action
-    changeId(value){this.idValue = value}
-    @action
-    changePw(value){this.pwValue = value}
-    
-    @action
-    TotalScore(score){
-      this.totalScore += score
-    }
+  @action
+  TotalScore(score) {
+    this.totalScore += score;
+  }
 }
 
 export default new QuizStore();

@@ -3,9 +3,7 @@ import { Header, Image, Segment } from "semantic-ui-react";
 import UserAns from "../Material/UserAns";
 import Timeout from "../Material/Timeout";
 
-
 class Quizstart extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -24,12 +22,20 @@ class Quizstart extends Component {
   };
 
   render() {
-    const { quiz,quizs, setQuiz,totalScore,onTotalScore,onNextQuiz } = this.props;
+    const {
+      quiz,
+      quizs,
+      setQuiz,
+      totalScore,
+      onTotalScore,
+      onNextQuiz,
+      nextQuiz,
+    } = this.props;
     //quiz : getselectquiz
     const middleForm = {
       margin: "40px 0",
-      overflow:"hidden"
-    }
+      overflow: "hidden",
+    };
 
     const imgForm = {
       width: "50%",
@@ -38,7 +44,7 @@ class Quizstart extends Component {
       border: "4px dotted #adadad",
       borderRadius: "20px",
       padding: "20px",
-      float: "left"
+      float: "left",
     };
     const imgcenterBox = {
       width: "100%",
@@ -61,37 +67,35 @@ class Quizstart extends Component {
       alignItems: "center",
       margin: "30px 0",
       borderRadius: "20px",
-    }
+    };
     const styleHeader = {
       width: "100%",
-      color:"#666",
-      fontSize:"40px"
+      color: "#666",
+      fontSize: "40px",
     };
     const myGrid = {
       width: "25%",
-      height:"448px",
+      height: "448px",
       float: "left",
-      display:"flex",
-      justifyContent:"center",
-      alignItems:"center"
-    }
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    };
     const myForm = {
-      textAlign:"center",
-      
-    }
+      textAlign: "center",
+    };
     const myPointTxt = {
       fontSize: "30px",
-      color:"#444"
-    }
+      color: "#444",
+    };
     const myPoint = {
       color: "#f50057",
       fontWeight: "bold",
-      fontSize: "60px"
-    }
-    
+      fontSize: "60px",
+    };
+
     return (
       <div>
-
         <Segment style={doneHeader}>
           <Header as="h1" textAlign="center" style={styleHeader}>
             {quiz.title}
@@ -99,13 +103,11 @@ class Quizstart extends Component {
         </Segment>
 
         <div style={middleForm}>
-
-        <div style={myGrid}>
-          <div style={myForm}>
-            <Timeout quiz={quiz} quizs={quizs} />
+          <div style={myGrid}>
+            <div style={myForm}>
+              <Timeout quiz={quiz} quizs={quizs} />
+            </div>
           </div>
-        </div>
-          
 
           <div style={imgForm}>
             <div style={imgcenterBox}>
@@ -116,13 +118,22 @@ class Quizstart extends Component {
           <div style={myGrid}>
             <div style={myForm}>
               <p style={myPointTxt}>Your POINT</p>
-                <div style={myPoint}>{quiz.point} / {totalScore}</div>
+              <div style={myPoint}>
+                {quiz.point} / {totalScore}
+              </div>
             </div>
           </div>
         </div>
         <div>
-            <UserAns quiz={quiz} quizs={quizs} setQuiz={setQuiz} onTotalScore={onTotalScore} onNextQuiz={onNextQuiz} totalScore={totalScore}/>
-            
+          <UserAns
+            quiz={quiz}
+            quizs={quizs}
+            setQuiz={setQuiz}
+            onTotalScore={onTotalScore}
+            onNextQuiz={onNextQuiz}
+            totalScore={totalScore}
+            nextQuiz={nextQuiz}
+          />
         </div>
       </div>
     );
