@@ -102,7 +102,13 @@ const saveBtn = {
   fontSize: "18px",
 };
 
-export default function Checkboxes({ quiz, onTotalScore,totalScore ,onNextQuiz}) {
+export default function Checkboxes({
+  quiz,
+  onTotalScore,
+  totalScore,
+  onNextQuiz,
+  nextQuiz,
+}) {
   const classes = useStyles();
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
@@ -156,23 +162,38 @@ export default function Checkboxes({ quiz, onTotalScore,totalScore ,onNextQuiz})
     setChecked4(e.target.checked);
     e.target.checked === quiz.check4 ? setCheck4(true) : setCheck4(false);
   };
-  const falseChecked = () =>{
-    setChecked1(false)
-    setChecked2(false)
-    setChecked3(false)
-    setChecked4(false)
-  }
-  console.log("checked1 : " + checked1)
-  console.log("check1 : " + check1)
-  console.log("checked2 : " + checked2)
-  console.log("check2 : " + check2)
-  console.log("checked3 : " + checked3)
-  console.log("check3 : " + check3)
-  console.log("checked4 : " + checked4)
-  console.log("check4 : " + check4)
+  const falseChecked = () => {
+    setChecked1(false);
+    setChecked2(false);
+    setChecked3(false);
+    setChecked4(false);
+
+    onNextQuiz(quiz);
+
+    // console.log("ans");
+    // console.log("checked1 : " + checked1);
+    // console.log("Quiz.checked1 : " + quiz.check1);
+    // console.log("check1 : " + check1);
+    // console.log("checked2 : " + checked2);
+    // console.log("Quiz.checked2 : " + quiz.check2);
+    // console.log("check2 : " + check2);
+    // console.log("checked3 : " + checked3);
+    // console.log("Quiz.checked3 : " + quiz.check3);
+    // console.log("check3 : " + check3);
+    // console.log("checked4 : " + checked4);
+    // console.log("Quiz.checked4 : " + quiz.check4);
+    // console.log("check4 : " + check4);
+  };
+
+  React.useEffect(() => {
+    checked1 === quiz.check1 ? setCheck1(true) : setCheck1(false);
+    checked2 === quiz.check2 ? setCheck2(true) : setCheck2(false);
+    checked3 === quiz.check3 ? setCheck3(true) : setCheck3(false);
+    checked4 === quiz.check4 ? setCheck4(true) : setCheck4(false);
+  });
 
   const handleCorrect = () => {
-     totalScore = 0;
+    totalScore = 0;
     check1 && true
       ? check2 && true
         ? check3 && true
@@ -182,47 +203,45 @@ export default function Checkboxes({ quiz, onTotalScore,totalScore ,onNextQuiz})
           : alert("오답입니다 :<")
         : alert("오답입니다 :<")
       : alert("오답입니다 :<");
-//점수 증가
-      check1 && true
-      ? check2 && true
-        ? check3 && true
-          ? check4 && true
-            ? totalScore += 40
-            : totalScore += 0
-          : totalScore += 0
-        : totalScore += 0
-      : totalScore += 0
-      onTotalScore(totalScore)
-
-//checkBox 초기화
+    //점수 증가
     check1 && true
-    ? check2 && true
-      ? check3 && true
-        ? check4 && true
-          ? falseChecked()
-          : totalScore += 0
-          : totalScore += 0
-        : totalScore += 0
-      : totalScore += 0
-
-
-
-      check1 && true
       ? check2 && true
         ? check3 && true
           ? check4 && true
-            ? onNextQuiz(quiz)
-            : totalScore += 0
-          : totalScore += 0
-        : totalScore += 0
-      : totalScore += 0
-      
+            ? (totalScore += 40)
+            : (totalScore += 0)
+          : (totalScore += 0)
+        : (totalScore += 0)
+      : (totalScore += 0);
+    onTotalScore(totalScore);
+
+    //checkBox 초기화
+
+    // check1 && true
+    //   ? check2 && true
+    //     ? check3 && true
+    //       ? check4 && true
+    //         ? onNextQuiz(quiz)
+    //         : (totalScore += 0)
+    //       : (totalScore += 0)
+    //     : (totalScore += 0)
+    //   : (totalScore += 0);
+
+    check1 && true
+      ? check2 && true
+        ? check3 && true
+          ? check4 && true
+            ? falseChecked()
+            : (totalScore += 0)
+          : (totalScore += 0)
+        : (totalScore += 0)
+      : (totalScore += 0);
   };
-  
-    
+
   return (
     <form noValidate autoComplete="off">
       <div className={classes.styleCheck} style={styleCheck}>
+        {}
         <Checkbox
           icon={
             <RadioButtonUncheckedIcon
@@ -327,7 +346,7 @@ export default function Checkboxes({ quiz, onTotalScore,totalScore ,onNextQuiz})
           variant="contained"
           color="secondary"
           onClick={() => {
-            handleCorrect() 
+            handleCorrect();
           }}
           style={saveBtn}
         >
