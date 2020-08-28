@@ -8,7 +8,9 @@
 
 '**멀**퀴즈 온더 블럭'은 여러 기관에서 사용하고 있고 'Multicampus'에서 앞으로 다양한 프로그램에서 활용할 수 있도록 'QUIZ' 폼의 웹 페이지를 제작​ :speech_balloon:
 
-![시연](C:\Users\gpwlt\Pictures\동영상.PNG)
+![동영상](https://user-images.githubusercontent.com/44856614/91561694-fdb2fd00-e976-11ea-8599-95f602749112.PNG)
+
+*추후 유투브 업로드 시, 링크 걸어둘 예정*
 
 
 
@@ -93,7 +95,7 @@
 
 ## 5. 시나리오 & 결과📢
 
-![메인페이지](C:\Users\gpwlt\Pictures\메인페이지.PNG)
+![메인페이지](https://user-images.githubusercontent.com/44856614/91561225-2f779400-e976-11ea-85d3-4973e91d8087.PNG)
 
 **첫 화면-> 메인페이지**
 
@@ -101,7 +103,7 @@
 
 
 
-![로그인](C:\Users\gpwlt\Pictures\로그인.PNG)
+![로그인](https://user-images.githubusercontent.com/44856614/91561261-41593700-e976-11ea-8270-922cd687713d.PNG)
 
 **로그인 페이지**: 로그인 실행
 
@@ -109,9 +111,9 @@
 
 
 
-![create](C:\Users\gpwlt\Pictures\퀴즈폼.PNG)
+![퀴즈폼](https://user-images.githubusercontent.com/44856614/91561283-4b7b3580-e976-11ea-95c4-db7774cbb1b6.PNG)
 
-![퀴즈 디테일](C:\Users\gpwlt\Pictures\퀴즈생성.PNG)
+![퀴즈생성](https://user-images.githubusercontent.com/44856614/91561280-4a4a0880-e976-11ea-83d9-d84267413013.PNG)
 
 **퀴즈 폼 생성 페이지**
 
@@ -128,11 +130,11 @@
 
 
 
-![퀴즈 실행](C:\Users\gpwlt\Pictures\퀴즈 실행.PNG)
+![퀴즈 실행](https://user-images.githubusercontent.com/44856614/91561271-461deb00-e976-11ea-9b81-9252f1ffd5a3.PNG)
 
-![퀴즈 실행](C:\Users\gpwlt\Pictures\타이머포인트.PNG)
+![타이머포인트](https://user-images.githubusercontent.com/44856614/91561284-4c13cc00-e976-11ea-9df1-1175f28c7dbc.PNG)
 
-![타임아웃](C:\Users\gpwlt\Pictures\타임아웃.PNG)
+![타임아웃](https://user-images.githubusercontent.com/44856614/91561291-4e762600-e976-11ea-80a2-5a25324e3f44.PNG)
 
 **퀴즈 실행 페이지**
 
