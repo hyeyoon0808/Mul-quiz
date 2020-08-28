@@ -3,8 +3,6 @@
 ## 0. 로컬 실행 방법
 *Read this in other languages: [English](README-EN.md).*
 
-**## 0. 로컬 실행 방법**
-
 npm 실행을 위해  node.js(12.18.3)를 설치합니다.
 설치 후 npm 6.14.6를 확인할 수 있습니다.
 
