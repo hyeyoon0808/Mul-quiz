@@ -1,5 +1,5 @@
 # :grey_question: 멀퀴즈 온더 블럭
-*Read this in English: [English](README-EN.md).*
+*Read this in English: [English](README_EN.md).*
 
 ## 0. 로컬 실행 방법
 
