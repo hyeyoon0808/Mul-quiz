@@ -16,7 +16,7 @@ npm -v
 
 ## 1. Intro
 
-'**Mul-quiz** on the block' is a web page of 'Quiz' format reffered to 'Kaboot'. The purpose of this web page is to provide educational facilities an experience of a variety quiz platforms. :speech_balloon:
+'**Mul-quiz** on the block' is a web page of 'Quiz' format referred to 'Kaboot'. The purpose of this web page is to provide educational facilities an experience of a variety quiz platforms. :speech_balloon:
 
 ![동영상](https://user-images.githubusercontent.com/44856614/91561694-fdb2fd00-e976-11ea-8599-95f602749112.PNG)
 
