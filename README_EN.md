@@ -1,4 +1,5 @@
 # :grey_question: Mul-Quiz on the block
+![version](<https://img.shields.io/badge/version-0.1.0-yellow>)   ![react](<https://img.shields.io/badge/react-16.13.1-red>)   ![mobx](<https://img.shields.io/badge/mobx-5.15.5-blueviolet>)
 *한국어로 보기: [Korean](README.md).*
 
 ## 0. Getting Started

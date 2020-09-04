@@ -1,4 +1,6 @@
 # :grey_question: 멀퀴즈 온더 블럭
+![version](<https://img.shields.io/badge/version-0.1.0-yellow>)   ![react](<https://img.shields.io/badge/react-16.13.1-red>)   ![mobx](<https://img.shields.io/badge/mobx-5.15.5-blueviolet>)
+
 *Read this in English: [English](README_EN.md).*
 
 ## 0. 로컬 실행 방법
