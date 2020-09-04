@@ -1,9 +1,9 @@
 # :grey_question: 멀퀴즈 온더 블럭
-*Read this in other languages: [English](README-EN.md).*
+*Read this in English: [English](README-EN.md).*
 
 ## 0. 로컬 실행 방법
 
-npm 실행을 위해  node.js(12.18.3)를 설치합니다.
+npm 실행을 위해  node.js(v12.18.3)를 설치합니다.
 설치 후 npm 6.14.6를 확인할 수 있습니다.
 
 ```bash
@@ -15,7 +15,8 @@ npm -v
 
 ## 1. 프로젝트 소개
 
-'**멀**퀴즈 온더 블럭'은 여러 기관에서 사용하고 있고 'Multicampus'에서 앞으로 다양한 프로그램에서 활용할 수 있도록 'QUIZ' 폼의 웹 페이지를 제작​ :speech_balloon:
+'**멀**퀴즈 온더 블럭': 여러 기관에서 사용하고 있는 'Kaboot'을 참고한  'QUIZ' 폼의 웹 페이지. 
+'Multicampus'를 포함한 여러 교육 기관에서 다양한 프로그램에서 활용할 수 있도록 'QUIZ' 폼의 웹 페이지를 제작​ :speech_balloon:
 
 ![동영상](https://user-images.githubusercontent.com/44856614/91561694-fdb2fd00-e976-11ea-8599-95f602749112.PNG)
 
@@ -51,7 +52,7 @@ npm -v
 
 ## 3. 업무 분담
 
-😊 임근우 : 감독/총괄 및 Data(store) 관리, 퀴즈 리스트(수정/삽입/삭제) ,퀴즈 디테일(타이머/포인트/시간)
+😊 임근우 : 감독/총괄 및 Data(store) 관리, 퀴즈 리스트(수정/삽입/삭제) ,퀴즈 디테일(타이머/포인트)
 
 😊 이명호 : 라우터(메인-로그인-퀴즈) 기능, 로그인 기능, 퀴즈 리스트(제거/생성) 및 Publishing 총괄
 
@@ -70,13 +71,13 @@ npm -v
 
 
 
-### 2) 퀴즈 생성
+### 2) 퀴즈 생성 페이지로 이동
 
-> - 메인 화면에서 `Create Quiz `버튼을 이용 퀴즈 생성 페이지로 이동
+> - 메인 화면에서 `Create Quiz `버튼을 이용해서 퀴즈 생성 페이지로 이동
 
 
 
-### 3) 퀴즈 생성
+### 3) 퀴즈 생성 
 
 > - 퀴즈 생성 페이지로 이동 후 맨 좌측의 Quiz List 에서 생성 목록 확인 가능
 >
@@ -86,9 +87,10 @@ npm -v
 
 ### 4) 퀴즈 세팅
 
+> - `Select Text ` 설정
+> - `Check Box` 설정
 > - `Sec` 선택
 > - `Points` 선택
-> - `Select Text `, `Check Box` 설정
 > - 필요한 이미지 업로드
 > - 모든 수정사항 저장
 
@@ -98,11 +100,13 @@ npm -v
 
 > - 상단 Navigation 의 `Done` 으로 퀴즈 게시
 > - 퀴즈 화면 좌측 `Start Quiz Modal` 으로 퀴즈 시작
+> - 정해진 시간이 끝날시 Time Out 메세지 출력
 > - 하단의 각 Select Box 로 정답 체크 후 제출
+> - 결과 알림 (정답/오담)
 
 
 
-## 5. 시나리오 & 결과📢
+## 5. 시나리오 & 결과 📢
 
 ![메인페이지](https://user-images.githubusercontent.com/44856614/91561225-2f779400-e976-11ea-85d3-4973e91d8087.PNG)
 
@@ -132,7 +136,7 @@ npm -v
   - 타이머 설정
   - 포인트(점수) 설정
   - 이미지 업로드 -> 업로드된 사진을 미리보기 가능하게 구현
-  - 선택지 입력 및 정답 설정
+  - 선택지 입력 및 정답 설정(checkbox)
   - `Modify/ Save` 클릭하여 수정 완료
 
 
@@ -149,6 +153,6 @@ npm -v
 
 > - 1번부터 퀴즈 실행하게 설정
 >
-> - `Start Quiz Modal` 을 눌러 타이머를 설정
+> - `Start Quiz Modal` 을 눌러 타이머 시작
 > - 정답을 맞추면 점수에 맞춰 포인트 획득
 > - 시간초과가 되면 Timeout 발생
