@@ -8,7 +8,7 @@ To get npm on local, you need to download node.js(v12.18.3).
 Once it's installed, run this command to check the installed version.
 
 ```bash
-npm start
+npm install
 npm -v
 6.14.6
 ```
