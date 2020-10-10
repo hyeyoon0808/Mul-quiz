@@ -18,7 +18,7 @@ npm -v
 
 ## 1. 프로젝트 소개
 
-'**멀**퀴즈 온더 블럭': 여러 기관에서 사용하고 있는 'Kaboot'을 참고한  'QUIZ' 폼의 웹 페이지 입니다.
+'**멀**퀴즈 온더 블럭': 여러 기관에서 사용하고 있는 'Kahoot'을 참고한  'QUIZ' 폼의 웹 페이지 입니다.
 'Multicampus'를 포함한 여러 교육 기관에서 다양한 프로그램에서 활용할 수 있도록 'QUIZ' 폼의 웹 페이지를 제작했습니다.​ :speech_balloon:
 
 ![동영상](https://user-images.githubusercontent.com/44856614/91561694-fdb2fd00-e976-11ea-8599-95f602749112.PNG)
