@@ -11,6 +11,7 @@ Once it's installed, run this command to check the installed version.
 npm install
 npm -v
 6.14.6
+npm start
 ```
 
 
