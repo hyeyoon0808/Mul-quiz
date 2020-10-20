@@ -12,6 +12,7 @@ npm 실행을 위해  node.js(v12.18.3)를 설치합니다.
 npm install
 npm -v
 6.14.6
+npm start
 ```
 
 
