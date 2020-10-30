@@ -123,6 +123,8 @@ npm start
 
 **Log-in page**
 
+> **아이디: test | 비밀번호: 123**
+
 > Show an alert message if a wrong ID or Password is entered.
 
 
